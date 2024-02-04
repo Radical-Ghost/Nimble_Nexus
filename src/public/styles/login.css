@@ -1,0 +1,235 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik&display=swap");
+
+:root {
+	--main-c: rgb(26, 155, 219);
+	--back-c: whitesmoke;
+	--text-c: white;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	color: var(--text-c);
+	font-family: "Rubik", sans-serif;
+}
+
+body {
+	height: 100vh;
+	position: relative;
+	background: url("		/images/Background.png");
+}
+
+.shade {
+	opacity: 30%;
+	background-color: black;
+	width: 50%;
+	position: absolute;
+	left: 50%;
+	height: 100%;
+}
+
+.info {
+	width: 50%;
+	left: 50%;
+	height: 100%;
+	position: absolute;
+	z-index: 1000;
+}
+
+.info .Text {
+	text-align: center;
+	width: 550px;
+	font-size: 70px;
+	position: absolute;
+	top: 45%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0 0 20px 20px;
+}
+
+.info .under-Text {
+	width: 550px;
+	font-size: 30px;
+	position: absolute;
+	top: 55%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 0 0 20px 45px;
+}
+
+.info p:hover {
+	text-shadow: 0 0 0.125em var(--text-c), 0 0 0.225em var(--main-c);
+}
+
+.login-sec {
+	background-color: rgb(12, 12, 78);
+	top: 50%;
+	left: 30%;
+	position: absolute;
+	z-index: 1000;
+	transform: translate(-50%, -50%);
+	border: 2px solid var(--main-c);
+	height: 540px;
+	width: 450px;
+	border-radius: 10px;
+	transition: all 0.4s ease;
+	overflow: hidden;
+}
+
+.login-sec:hover {
+	box-shadow: 0 0 40px var(--main-c);
+}
+
+.login-sec .box {
+	position: absolute;
+	left: 0;
+	top: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	width: 100%;
+}
+
+.box h2 {
+	text-align: center;
+	font-size: 40px;
+}
+
+.box .input {
+	width: 340px;
+	height: 50px;
+	margin: 30px;
+	position: relative;
+	border-bottom: 2px solid var(--main-c);
+}
+
+.input input {
+	width: 100%;
+	height: 85%;
+	background: transparent;
+	border: none;
+	outline: none;
+	font-size: 16px;
+	padding-right: 28px;
+	color: var(--main-c);
+}
+
+.input label {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	font-size: 16px;
+	font-weight: 500;
+	color: var(--text-c);
+	pointer-events: none;
+	transition: 0.3s ease;
+}
+
+.input .icon {
+	position: absolute;
+	top: 13px;
+	right: 0;
+	font-size: 19px;
+}
+
+.input input:valid ~ label,
+.input input:focus ~ label {
+	top: -5px;
+	color: var(--main-c);
+	font: 600;
+}
+
+.btn {
+	background-color: var(--main-c);
+	font-weight: 700;
+	color: black;
+	width: 85%;
+	height: 45px;
+	margin: 0 30px;
+	border-radius: 5px;
+	border: none;
+	outline: none;
+}
+
+.btn:active {
+	transform: scale(0.9);
+	transition: transform 0.4s ease;
+}
+
+.ca {
+	font-size: 14px;
+	text-align: center;
+	margin: 30px;
+}
+
+.ca p a {
+	text-decoration: none;
+}
+
+.ca p a:hover {
+	color: var(--main-c);
+	font-weight: 600;
+}
+
+.am {
+	font-size: 12px;
+	text-align: end;
+	margin: 4rem 2rem 0 0;
+}
+
+.am a {
+	text-decoration: none;
+}
+
+.am a:hover {
+	color: var(--main-c);
+	font-weight: 600;
+}
+
+.login-sec .box-register {
+	transform: translateY(-500px);
+	transition: transform 0.6s ease;
+}
+
+.login-sec.active .box-register {
+	transform: translateY(0);
+	transition-delay: 0.7s;
+}
+
+.login-sec.deactive .box-register {
+	transform: translateY(-500px);
+	transition-delay: 0.2s;
+}
+
+.login-sec .box-login {
+	transform: translateY(0);
+	transition: transform 0.7s ease;
+}
+
+.login-sec.active .box-login {
+	transform: translateY(500px);
+	transition-delay: 0s;
+}
+
+.login-sec.deactive .box-login {
+	transform: translateY(-500px);
+	transition-delay: 0.4s;
+}
+
+.login-sec .box-admin {
+	transform: translateY(500px);
+	transition: transform 0.5s ease;
+}
+
+.login-sec.deactive .box-admin {
+	transform: translateY(0);
+	transition-delay: 0.6s;
+}
+
+.login-sec.active .box-admin {
+	transform: translateY(500px);
+	transition-delay: 0.1s;
+}

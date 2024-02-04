@@ -1,0 +1,96 @@
+@import "navbar.css";
+
+.queires {
+	color: var(--change-text);
+	width: 95%;
+	margin: 2% auto;
+	border-radius: 10px;
+}
+
+.query-container {
+	display: none;
+	position: relative;
+}
+
+.query-container::before {
+	content: "";
+	background-color: rgb(142, 142, 142);
+	position: absolute;
+	min-height: 100%;
+	width: 2px;
+	left: -10px;
+}
+
+.query-container:not(.parent) {
+	margin: 1rem 0 0 3rem;
+}
+
+.query-container:is(.parent) {
+	margin: 1rem 0 1rem 0;
+}
+
+.query-container.opened {
+	display: block;
+}
+
+.query-card {
+	border: 1px solid var(--border-c);
+	box-shadow: 0 0 50px var(--shadow-c);
+	background-color: var(--fore-c);
+	padding: 1rem;
+	border-radius: 15px;
+}
+
+.query-card h3,
+.query-card p {
+	padding: 0 0 0.5rem 0;
+}
+
+.query-header {
+	display: flex;
+	font-size: 1.4rem;
+	align-items: center;
+	margin: 0 0 0.7rem 0;
+}
+
+.query-body {
+	margin: 0.7rem;
+}
+
+.query-footer {
+	display: flex;
+	justify-content: flex-end;
+	gap: 2rem;
+	align-items: center;
+	font-size: 0.75rem;
+}
+
+.helpful {
+	opacity: 60%;
+	cursor: pointer;
+}
+
+.reply {
+	border: 2px solid var(--border-c);
+	border-radius: 20px;
+	padding: 6px;
+	cursor: pointer;
+}
+
+.replies {
+	background-color: var(--border-c);
+	border: 2px solid var(--border-c);
+	border-radius: 20px;
+	padding: 6px;
+	cursor: pointer;
+}
+
+.profile-pic {
+	width: 30px;
+	border: 0.7px solid var(--change-text);
+	border-radius: 50%;
+}
+
+.profile-name {
+	padding: 0 0 0 0.7rem;
+}

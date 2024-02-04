@@ -1,0 +1,76 @@
+@import "navbar.css";
+
+.search {
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+}
+
+.search input {
+	color: var(--stext-c);
+}
+
+.scrolling-text {
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	height: fit-content;
+	background-color: var(--main-c);
+}
+
+.home {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100%;
+	width: 100%;
+}
+
+.scrolling-text p {
+	font-size: 1.6rem;
+	color: var(--stext-c);
+	animation: RightToLeft 15s linear infinite;
+}
+
+.scrolling-text p:hover {
+	animation-play-state: paused;
+}
+
+@keyframes RightToLeft {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-50%);
+	}
+}
+
+.row1 {
+	width: 100%;
+	height: 45%;
+	display: flex;
+	justify-content: space-between;
+	background-color: transparent;
+	color: var(--stext-c);
+	justify-content: center;
+	align-items: center;
+	gap: 3rem;
+	margin: 20px 0 0 0;
+}
+
+.notice1,
+.notice2 {
+	height: 100%;
+	width: 46%;
+	background-color: var(--fore-c);
+	border-radius: 16px;
+}
+
+.notice3 {
+	height: 45%;
+	width: 94.5%;
+	background-color: var(--fore-c);
+	border-radius: 16px;
+	align-self: center;
+	margin: 20px;
+}

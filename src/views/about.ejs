@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/styles/about.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+			<div class="sub-heading">About</div>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<div class="about">
+			<div class="about-heading">Welcome to Nimble Nexus</div>
+
+			<div class="main-content">
+				<div class="objective">
+					<div class="h-heading">Objectives</div>
+					<ul>
+						<li>
+							To make college life easier, more fun, and more
+							connected.
+						</li>
+
+						<li>
+							To provide a user-friendly notice board that is easy
+							to use for everyone, regardless of their abilities.
+						</li>
+
+						<li>
+							To create a community space where students, faculty,
+							and administrators can connect and collaborate.
+						</li>
+
+						<li>
+							To engage with your college community like never
+							before by discovering the latest events, getting
+							important updates, and having interactive
+							discussions.
+						</li>
+					</ul>
+				</div>
+				<div class="goals">
+					<div class="h-heading"><p>Goals</p></div>
+					<ul>
+						<li>
+							Viewing the notices uploaded by different
+							authorities.
+						</li>
+						<li>Getting regularly notified with notice updates.</li>
+						<li>Looking for a particular type of notice easily.</li>
+						<li>Sharing notifications among colleagues.</li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="footer">
+				<div class="footer">
+					<div class="team">
+						<span class="team-head">Team Members</span>
+						<p>Soham Mandavkar</p>
+						<p>Pooja Mayekar</p>
+						<p>Atharva Mhatre</p>
+						<p>Yash Mhatre</p>
+					</div>
+					<div class="team">
+						<p class="guide-name">Guide</p>
+						<div class="prof">Prof. Priya Parate</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

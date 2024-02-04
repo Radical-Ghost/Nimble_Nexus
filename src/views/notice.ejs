@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nimble Nexus</title>
+		<link rel="stylesheet" href="/styles/notice.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+			<p class="sub-heading">Notices</p>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<div class="notices">
+			<div class="search-bar">
+				<div class="search">
+					<input type="text" placeholder="Search Notices" />
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
+
+				<div class="dropdowns">
+					<div class="sub-department">
+						<p class="select-department">General</p>
+						<i class="fa-solid fa-sort-down"></i>
+						<div class="sub-department-content">
+							<div class="sub-department-item">CS</div>
+							<div class="sub-department-item">FE</div>
+							<div class="sub-department-item">IT</div>
+							<div class="sub-department-item">MECH</div>
+							<div class="sub-department-item">EXTC</div>
+							<div class="sub-department-item">AIDS</div>
+							<div class="sub-department-item">General</div>
+						</div>
+					</div>
+
+					<div class="date">
+						<p class="select-date">All Time</p>
+						<i class="fa-solid fa-sort-down"></i>
+						<div class="date-content">
+							<div class="date-item">Today</div>
+							<div class="date-item">This Week</div>
+							<div class="date-item">This Month</div>
+							<div class="date-item">This Year</div>
+							<div class="date-item">All Time</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="sub-notices">
+				<div class="random"></div>
+				<div class="heading-notice">Notices</div>
+				<div class="heading-date">Date</div>
+				<div class="notice-content">
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>First Notice</p>
+						<span>22/10/2023</span>
+					</div>
+
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>Second Notice</p>
+						<span>22/10/2023</span>
+					</div>
+
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>Third Notice</p>
+						<span>22/10/2023</span>
+					</div>
+
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>Fourth Notice</p>
+						<span>22/10/2023</span>
+					</div>
+
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>Fifth Notice</p>
+						<span>22/10/2023</span>
+					</div>
+
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>Sixth Notice</p>
+						<span>22/10/2023</span>
+					</div>
+
+					<div class="notice-data">
+						<img src="/images/cess.png" />
+						<p>Seventh Notice</p>
+						<span>22/10/2023</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>

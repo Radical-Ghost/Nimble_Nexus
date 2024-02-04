@@ -1,0 +1,97 @@
+@import "navbar.css";
+
+.sub-admin {
+	color: var(--change-text);
+	width: 95%;
+	margin: 2% auto;
+	border-radius: 10px;
+	display: grid;
+	grid-template-columns: repeat(3, 33%);
+	grid-template-rows: 20% 80%;
+}
+
+.status-box {
+	align-self: center;
+	justify-self: center;
+	width: 60%;
+	height: 80%;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	padding: 1rem 3rem 1rem 3rem;
+	background-color: var(--fore-c);
+	border-radius: 8px;
+	border: 3px solid var(--border-c);
+}
+
+.status-box i {
+	padding: 2rem;
+	border: 8px solid var(--border-c);
+	border-radius: 50%;
+}
+
+.board {
+	background-color: var(--fore-c);
+	grid-column: span 3;
+	border-radius: 8px;
+	overflow-y: scroll;
+	border: 3px solid var(--border-c);
+}
+
+.table-header td {
+	border-bottom: 2px solid var(--change-text);
+	font-size: 1.3rem;
+	font-weight: 700;
+}
+
+.board h5 {
+	font-weight: 600;
+	font-size: 18px;
+}
+
+.board p {
+	font-weight: 400;
+	font-size: 13px;
+	color: var(--sub-text);
+}
+
+.board i {
+	margin-right: 1.2rem;
+}
+
+.board .people {
+	display: flex;
+	align-items: center;
+	margin: 0.4rem;
+}
+
+table {
+	width: 100%;
+}
+
+thead td {
+	font-size: 14px;
+	padding: 1rem;
+}
+
+tbody tr td {
+	padding: 1rem;
+}
+
+.roll p {
+	color: var(--change-text);
+	font-size: 1.6rem;
+}
+
+.edit {
+	width: 15%;
+}
+
+.edit a {
+	color: var(--change-text);
+	background-color: var(--border-c);
+	border: 3px solid var(--border-c);
+	border-radius: 15rem;
+	padding: 0.2rem;
+	text-decoration: none;
+}

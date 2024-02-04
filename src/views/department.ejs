@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="/styles/deparment.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<div class="department-sub">
+			<p class="heading-text">Departments</p>
+			<div class="CS BUTTON">
+				<a href="/cs"><span>CS</span></a>
+			</div>
+			<div class="FE BUTTON">
+				<a href="/fe"><span>FE</span></a>
+			</div>
+			<div class="IT BUTTON">
+				<a href="/it"><span>IT</span></a>
+			</div>
+			<div class="MECH BUTTON">
+				<a href="/mech"><span>MECH</span></a>
+			</div>
+			<div class="EXTC BUTTON">
+				<a href="/extc"><span>EXTC</span></a>
+			</div>
+			<div class="AIDS BUTTON">
+				<a href="/aids"><span>AIDS</span></a>
+			</div>
+		</div>
+	</body>
+</html>

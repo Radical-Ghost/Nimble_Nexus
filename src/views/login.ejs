@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nimble Nexus</title>
+		<link rel="stylesheet" href="/styles/login.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script src="../JS/login.js" defer></script>
+	</head>
+
+	<body>
+		<!--info-->
+		<div class="info">
+			<div class="Text"><p>NIMBLE NEXUS</p></div>
+			<div class="under-Text">
+				<p>Where College Meets Connectivity</p>
+			</div>
+		</div>
+		<div class="shade"></div>
+		<!--info-->
+
+		<!--login-->
+		<div class="login-sec">
+			<div class="box-login box">
+				<form action="#">
+					<h2>Sign In</h2>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-regular fa-envelope"></i>
+						</span>
+						<input id="login-email" type="email" required />
+						<label for="">Email</label>
+					</div>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-solid fa-lock"></i>
+						</span>
+						<input id="login-password" type="password" required />
+						<label for="">Password</label>
+					</div>
+
+					<button class="btn" id="login" onclick="verify_user()">
+						Login
+					</button>
+
+					<!-- <div class="ca">
+						<p>
+							Create an Account? <a href="#" class="register-link">Sign Up</a>
+						</p>
+					</div> -->
+
+					<div class="am">
+						<a href="#" class="admin-sign-in">Admin Login</a>
+					</div>
+				</form>
+			</div>
+			<!--login-->
+
+			<!--signup-->
+			<div class="box-register box">
+				<form action="#">
+					<h2>Sign Up</h2>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-regular fa-envelope"></i>
+						</span>
+						<input class="sign-email" type="email" required />
+						<label for="">Email</label>
+					</div>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-solid fa-lock"></i>
+						</span>
+						<input class="sign-password" type="password" required />
+						<label for="">Password</label>
+					</div>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-solid fa-lock"></i>
+						</span>
+						<input
+							class="sign-confirm-password"
+							type="password"
+							required />
+						<label for="">Confirm Password</label>
+					</div>
+
+					<button class="btn" type="button" onclick="verify()">
+						Sign UP
+					</button>
+
+					<div class="ca">
+						<p>
+							Already have an Account?
+							<a href="#" class="sign-in-link-reg">Sign In</a>
+						</p>
+					</div>
+				</form>
+			</div>
+			<!--signup-->
+
+			<!--admin-->
+			<div class="box-admin box">
+				<form action="#">
+					<h2>Admin Login</h2>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-regular fa-user"></i>
+						</span>
+						<input type="username" id="username" required />
+						<label for="">User Name</label>
+					</div>
+
+					<div class="input">
+						<span class="icon">
+							<i class="fa-solid fa-lock"></i>
+						</span>
+						<input id="admin-password" type="password" required />
+						<label for="">Password</label>
+					</div>
+
+					<button class="btn" type="button" onclick="verify_admin()">
+						Log In
+					</button>
+
+					<div class="ca">
+						<p>
+							Not an Admin?
+							<a href="#" class="sign-in-link-admin">Sign In</a>
+						</p>
+					</div>
+				</form>
+			</div>
+			<!--admin-->
+		</div>
+	</body>
+</html>

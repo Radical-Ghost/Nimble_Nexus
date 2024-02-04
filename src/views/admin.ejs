@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Nimble Nexus</title>
+		<link rel="stylesheet" href="/styles/admin.css" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+			<div class="sub-heading">Admin</div>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<div class="sub-admin">
+			<div class="status-box">
+				<i class="fas fa-users"></i>
+				<div>
+					<h3>8,267</h3>
+					<span>Students</span>
+				</div>
+			</div>
+
+			<div class="status-box">
+				<i class="fa-solid fa-question"></i>
+				<div>
+					<h3>10</h3>
+					<span> Queries</span>
+				</div>
+			</div>
+
+			<div class="status-box">
+				<i class="fa-sharp fa-solid fa-bell"></i>
+				<div>
+					<h3>8,267</h3>
+					<span>Notices</span>
+				</div>
+			</div>
+
+			<div class="board">
+				<table>
+					<thead>
+						<tr class="table-header">
+							<td>Name</td>
+							<td>Department</td>
+							<td>Year</td>
+							<td>Roll no</td>
+							<td>
+								<div class="dropdowns">
+									<div class="sub-department">
+										<span class="select-department"
+											>Name</span
+										>
+										<i class="fa-solid fa-sort-down"></i>
+										<div class="sub-department-content">
+											<div class="sub-department-item">
+												Name
+											</div>
+											<div class="sub-department-item">
+												Department
+											</div>
+											<div class="sub-department-item">
+												Year
+											</div>
+											<div class="sub-department-item">
+												Roll NO
+											</div>
+										</div>
+									</div>
+								</div>
+							</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Pooja Mayekar</h5>
+									<p>pooja@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>A div</p>
+							</td>
+
+							<td class="roll">
+								<p>364</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Soham Mandavkar</h5>
+									<p>soham@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>A div</p>
+							</td>
+
+							<td class="roll">
+								<p>361</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Atharva Mhatre</h5>
+									<p>atharva@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>A div</p>
+							</td>
+
+							<td class="roll">
+								<p>365</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Yash Mhatre</h5>
+									<p>yash@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>A div</p>
+							</td>
+
+							<td class="roll">
+								<p>366</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Swastik Padhi</h5>
+									<p>swastik@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>B div</p>
+							</td>
+
+							<td class="roll">
+								<p>310</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Chhayangi Muzumdar</h5>
+									<p>chhaya@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>B div</p>
+							</td>
+
+							<td class="roll">
+								<p>306</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Yash Yadav</h5>
+									<p>yy@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>B div</p>
+							</td>
+
+							<td class="roll">
+								<p>368</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Muzammil Mulla</h5>
+									<p>Moze@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>B div</p>
+							</td>
+
+							<td class="roll">
+								<p>303</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Somnath Sambagh</h5>
+									<p>som@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>B div</p>
+							</td>
+
+							<td class="roll">
+								<p>376</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Gitesh Rao</h5>
+									<p>gitesh@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>IT</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>A div</p>
+							</td>
+
+							<td class="roll">
+								<p>348</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+
+						<tr>
+							<td class="people">
+								<i class="fa-solid fa-user"></i>
+								<div class="people-de">
+									<h5>Ajay Mishra</h5>
+									<p>ajay@gmail.com</p>
+								</div>
+							</td>
+
+							<td>
+								<h5>Comps</h5>
+							</td>
+
+							<td class="year">
+								<h5>Second</h5>
+								<p>B div</p>
+							</td>
+
+							<td class="roll">
+								<p>367</p>
+							</td>
+
+							<td class="edit"><a href="#">Edit</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</body>
+</html>
