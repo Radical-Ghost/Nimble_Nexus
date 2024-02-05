@@ -3,6 +3,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Lobster+Two:ital@1&display=swap");
 
 :root {
+	/* Common properties */
+	--ntext-c: black;
+	--stext-c: white;
+}
+
+body.light-theme {
 	--about-c: url(/images/about-light.svg);
 	--back-c: rgba(223, 224, 243, 0.411);
 	--border-c: rgba(185, 187, 212, 0.7);
@@ -11,12 +17,25 @@
 	--fore-c: rgba(255, 255, 255, 0.746);
 	--main-bg: linear-gradient(155deg, #07bccf, #7433e5);
 	--main-c: rgb(52, 132, 217);
-	--ntext-c: black;
-	--search-c: rgba(105, 105, 105, 0.21);
+	--search-c: rgba(0, 0, 0, 0.12);
 	--search-pc: rgba(0, 0, 0, 0.3);
 	--shadow-c: rgba(138, 139, 155, 0.2);
-	--stext-c: white;
 	--sub-text: rgb(108, 60, 227);
+}
+
+body.dark-theme {
+	--about-c: url(/images/about-dark.svg);
+	--back-c: rgb(0, 14, 25);
+	--border-c: rgb(0, 43, 78);
+	--change-text: white;
+	--department-text: thistle;
+	--fore-c: rgb(0, 21, 38);
+	--main-bg: linear-gradient(155deg, #390239, #311e4b, #0eb3b5);
+	--main-c: rgb(49, 26, 72);
+	--search-c: rgba(105, 105, 105, 0.21);
+	--search-pc: rgba(255, 255, 255, 0.3);
+	--shadow-c: rgba(0, 43, 78, 0.2);
+	--sub-text: rgb(19, 153, 163);
 }
 
 html {
