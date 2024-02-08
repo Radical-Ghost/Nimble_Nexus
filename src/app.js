@@ -1,4 +1,3 @@
-//dependencies
 require("dotenv").config({ path: "./.env" });
 const express = require("express");
 const mongoose = require("mongoose");
@@ -9,14 +8,23 @@ const fs = require("fs");
 const app = express();
 const port = process.env.PORT || 4000;
 
-// mongoose.connect("mongodb://localhost:27017/nimble_nexus", {
-// 	useNewUrlParser: true,
-// });
-// const db = mongoose.connection;
-// db.on("error", (error) => console.error(error));
-// db.once("open", () => console.log("Connected to Database"));
+const storage = multer.diskStorage({
+	destination: function (req, file, cb) {
+		cb(null, "uploads/");
+	},
+	filename: function (req, file, cb) {
+		cb(null, file.originalname);
+	},
+});
+const upload = multer({ storage: storage });
 
-//template engine
+app.post("/upload", upload.single("notice"), (req, res) => {
+	res.render("home", {
+		title: "Home",
+		message: "File was uploaded successfully!!" || "Default message",
+	});
+});
+
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static(path.join(__dirname, "public")));

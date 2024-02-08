@@ -9,12 +9,12 @@ const routes = [
 	{ path: "/about", view: "about", title: "About" },
 	{ path: "/admin", view: "admin", title: "Admin" },
 	{ path: "/dashboard", view: "dashboard", title: "Dashboard" },
-	{ path: "/cs", view: "Departments/cs", title: "Departments Cs" },
-	{ path: "/aids", view: "Departments/aids", title: "Departments Aids" },
-	{ path: "/extc", view: "Departments/extc", title: "Departments Extc" },
-	{ path: "/fe", view: "Departments/fe", title: "Departments Fe" },
-	{ path: "/it", view: "Departments/it", title: "Departments It" },
-	{ path: "/mech", view: "Departments/mech", title: "Departments Mech" },
+	{ path: "/cs", view: "departments/cs", title: "Departments Cs" },
+	{ path: "/aids", view: "departments/aids", title: "Departments Aids" },
+	{ path: "/extc", view: "departments/extc", title: "Departments Extc" },
+	{ path: "/fe", view: "departments/fe", title: "Departments Fe" },
+	{ path: "/it", view: "departments/it", title: "Departments It" },
+	{ path: "/mech", view: "departments/mech", title: "Departments Mech" },
 ];
 
 routes.forEach((route) => {
