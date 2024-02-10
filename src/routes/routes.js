@@ -8,6 +8,8 @@ const routes = [
 	{ path: "/queries", view: "queries", title: "Queries" },
 	{ path: "/about", view: "about", title: "About" },
 	{ path: "/admin", view: "admin", title: "Admin" },
+	{ path: "/login", view: "login", title: "Login" },
+	{ path: "/signup", view: "signup", title: "Signup" },
 	{ path: "/dashboard", view: "dashboard", title: "Dashboard" },
 	{ path: "/cs", view: "departments/cs", title: "Departments Cs" },
 	{ path: "/aids", view: "departments/aids", title: "Departments Aids" },
