@@ -94,6 +94,7 @@ body {
 	position: absolute;
 	left: 50%;
 	transform: translateX(-50%);
+	padding: 3.98em;
 }
 
 .search {

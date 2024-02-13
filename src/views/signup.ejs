@@ -4,8 +4,7 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title><%= title %></title>
-
-		<link rel="stylesheet" href="/styles/dashboard.css" />
+		<link rel="stylesheet" href="/styles/signup.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -20,68 +19,94 @@
 				<i class="fa-solid fa-bars"></i>
 			</button>
 			<span>Nimble Nexus</span>
-			<div class="sub-heading">Dashboard</div>
+			<div class="search">
+				<input type="text" placeholder="Search Notices" />
+				<i class="fa-solid fa-magnifying-glass"></i>
+			</div>
 		</div>
 
 		<%- include('components/navbar') %>
 		<!-- update from here -->
-
-		<div class="sub-dashboard">
-			<div class="column personal-info">
-				<h1>Personal Info</h1>
-				<div class="info-item">
-					<span>Name:</span><span class="right-span">Atharva</span>
+		<div class="container">
+			<h1 class="form-title">Sign up</h1>
+			<form action="register" method="post">
+				<div class="main-user-info">
+					<div class="user-input-box">
+						<label for="fullName">Full Name</label>
+						<input
+							type="text"
+							id="fullName"
+							name="fullName"
+							placeholder="Enter Full Name" />
+					</div>
+					<div class="user-input-box">
+						<label for="Id no">ID_no</label>
+						<input
+							type="text"
+							id="ID_no"
+							name="ID"
+							placeholder="Enter ID no" />
+					</div>
+					<div class="user-input-box">
+						<label for="email">Email</label>
+						<input
+							type="email"
+							id="email"
+							name="email"
+							placeholder="Enter Email" />
+					</div>
+					<div class="user-input-box">
+						<label for="phoneNumber">Phone Number</label>
+						<input
+							type="text"
+							id="phoneNumber"
+							name="phone"
+							placeholder="Enter Phone Number" />
+					</div>
+					<div class="user-input-box">
+						<label for="password">Password</label>
+						<input
+							type="password"
+							id="password"
+							name="password"
+							placeholder="Enter Password" />
+					</div>
+					<div class="user-input-box">
+						<label for="confirmPassword">Confirm Password</label>
+						<input
+							type="password"
+							id="confirmPassword"
+							name="cPassword"
+							placeholder="Confirm Password" />
+					</div>
 				</div>
-				<div class="info-item">
-					<span>Email:</span
-					><span class="right-span">atharva@gmail.com</span>
+				<div class="gender-details-box">
+					<span class="gender-title">Gender</span>
+					<div class="gender-category">
+						<input
+							type="radio"
+							name="gender"
+							id="male"
+							value="male" />
+						<label for="male">Male</label>
+						<input
+							type="radio"
+							name="gender"
+							id="female"
+							value="female" />
+						<label for="female">Female</label>
+						<input
+							type="radio"
+							name="gender"
+							id="other"
+							value="other" />
+						<label for="other">Other</label>
+					</div>
 				</div>
-				<div class="info-item">
-					<span>Phone:</span><span class="right-span">123456789</span>
+				<div class="form-submit-btn">
+					<button type="submit" class="btn">Register</button>
 				</div>
-				<div class="info-item">
-					<span>Date of Birth:</span
-					><span class="right-span">01/01/2000</span>
-				</div>
-				<div class="info-item">
-					<span>Gender:</span><span class="right-span">Male</span>
-				</div>
-				<span class="modify-info">Modify Details</span>
-			</div>
-
-			<div class="small-column column general-info">
-				<h1>General Info</h1>
-				<div class="info-item">
-					<span>Department:</span
-					><span class="right-span">Computer Science</span>
-				</div>
-				<div class="info-item">
-					<span>Academic Year:</span
-					><span class="right-span">2rd Year</span>
-				</div>
-				<div class="info-item">
-					<span>Caste Category:</span
-					><span class="right-span">General</span>
-				</div>
-				<div class="info-item">
-					<span>GR No:</span
-					><span class="right-span">SGNN000231</span>
-				</div>
-				<span class="modify-info">Modify Details</span>
-			</div>
-
-			<div class="column my-queries">
-				<h1>My Queries</h1>
-			</div>
-
-			<div class="column password-reset">
-				<h1>Reset Password</h1>
-				<label for="newPassword">New Password:</label>
-				<input type="password" id="newPassword" />
-				<button class="reset-password" onclick="resetPassword()">
-					Reset Password
-				</button>
-			</div>
+			</form>
 		</div>
 	</body>
 </html>

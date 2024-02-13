@@ -5,7 +5,7 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title><%= title %></title>
 
-		<link rel="stylesheet" href="/styles/dashboard.css" />
+		<link rel="stylesheet" href="/styles/login.css" />
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
@@ -20,68 +20,38 @@
 				<i class="fa-solid fa-bars"></i>
 			</button>
 			<span>Nimble Nexus</span>
-			<div class="sub-heading">Dashboard</div>
 		</div>
 
 		<%- include('components/navbar') %>
 		<!-- update from here -->
-
-		<div class="sub-dashboard">
-			<div class="column personal-info">
-				<h1>Personal Info</h1>
-				<div class="info-item">
-					<span>Name:</span><span class="right-span">Atharva</span>
+		<div class="wrapper">
+			<form action="login" method="post">
+				<h1>Login</h1>
+				<div class="input-box">
+					<input
+						type="text"
+						name="email"
+						placeholder="Email"
+						required />
+					<i class="bx bxs-user"></i>
 				</div>
-				<div class="info-item">
-					<span>Email:</span
-					><span class="right-span">atharva@gmail.com</span>
+				<div class="input-box">
+					<input
+						type="password"
+						name="password"
+						placeholder="Password"
+						required />
+					
 				</div>
-				<div class="info-item">
-					<span>Phone:</span><span class="right-span">123456789</span>
+				<div class="remember-forgot">
+					<label><input type="checkbox" />Remember Me</label>
+					<a href="#">Forgot Password</a>
 				</div>
-				<div class="info-item">
-					<span>Date of Birth:</span
-					><span class="right-span">01/01/2000</span>
+				<button type="submit" class="btn">Login</button>
+				<div class="register-link">
+					<p>Dont have an account? <a href="/signup"">Register</a></p>
 				</div>
-				<div class="info-item">
-					<span>Gender:</span><span class="right-span">Male</span>
-				</div>
-				<span class="modify-info">Modify Details</span>
-			</div>
-
-			<div class="small-column column general-info">
-				<h1>General Info</h1>
-				<div class="info-item">
-					<span>Department:</span
-					><span class="right-span">Computer Science</span>
-				</div>
-				<div class="info-item">
-					<span>Academic Year:</span
-					><span class="right-span">2rd Year</span>
-				</div>
-				<div class="info-item">
-					<span>Caste Category:</span
-					><span class="right-span">General</span>
-				</div>
-				<div class="info-item">
-					<span>GR No:</span
-					><span class="right-span">SGNN000231</span>
-				</div>
-				<span class="modify-info">Modify Details</span>
-			</div>
-
-			<div class="column my-queries">
-				<h1>My Queries</h1>
-			</div>
-
-			<div class="column password-reset">
-				<h1>Reset Password</h1>
-				<label for="newPassword">New Password:</label>
-				<input type="password" id="newPassword" />
-				<button class="reset-password" onclick="resetPassword()">
-					Reset Password
-				</button>
-			</div>
+			</form>
 		</div>
 	</body>
 </html>
