@@ -34,7 +34,8 @@
 							type="text"
 							id="fullName"
 							name="fullName"
-							placeholder="eg: pooja" />
+							placeholder="eg: pooja"
+							required />
 					</div>
 					<div class="user-input-box">
 						<label for="Id no">ID_no</label>
@@ -43,7 +44,8 @@
 							id="ID_no"
 							name="ID"
 							pattern="^SNCOUG\d{6}$"
-							placeholder="eg: SNCOUG000000" />
+							placeholder="eg: SNCOUG000000"
+							required />
 					</div>
 					<div class="user-input-box">
 						<label for="email">Email</label>
@@ -51,7 +53,8 @@
 							type="email"
 							id="email"
 							name="email"
-							placeholder="eg: pooja@gmail.com" />
+							placeholder="eg: pooja@gmail.com"
+							required />
 					</div>
 					<div class="user-input-box">
 						<label for="phoneNumber">Phone Number</label>
@@ -60,7 +63,8 @@
 							id="phoneNumber"
 							name="phone"
 							pattern="^\+91\d{10}$"
-							placeholder="+910000000000" />
+							placeholder="+910000000000"
+							required />
 					</div>
 					<div class="user-input-box">
 						<label for="password">Password</label>
@@ -69,7 +73,8 @@
 							id="password"
 							name="password"
 							pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$"
-							placeholder="Enter Password" />
+							placeholder="Enter Password"
+							required />
 					</div>
 					<div class="user-input-box">
 						<label for="confirmPassword">Confirm Password</label>
@@ -77,7 +82,8 @@
 							type="password"
 							id="confirmPassword"
 							name="cPassword"
-							placeholder="Confirm Password" />
+							placeholder="Confirm Password"
+							required />
 					</div>
 				</div>
 				<div class="gender-details-box">
@@ -89,21 +95,21 @@
 							id="male"
 							value="male"
 							required />
-						<label for="male">Male</label>
+						<div for="male">Male</div>
 						<input
 							type="radio"
 							name="gender"
 							id="female"
 							value="female"
 							required />
-						<label for="female">Female</label>
+						<div for="female">Female</div>
 						<input
 							type="radio"
 							name="gender"
 							id="other"
 							value="other"
 							required />
-						<label for="other">Other</label>
+						<div for="other">Other</div>
 					</div>
 				</div>
 				<div class="form-submit-btn">

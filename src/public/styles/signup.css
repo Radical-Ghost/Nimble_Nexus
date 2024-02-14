@@ -87,10 +87,19 @@ input {
 .gender-category {
 	margin: 1.40625rem 0;
 	color: var(--change-text);
+	display: flex;
+	justify-content: space-between;
+	width: 50%;
 }
 
-.gender-category label {
-	padding: 0 1.875rem 0 0.46875rem;
+.gender-category div {
+	margin-right: 2rem;
+	font-size: 1.875rem;
+}
+
+.gender-category input {
+	transform: scale(1.5);
+	padding-bottom: 2rem;
 }
 
 .gender-category label,
