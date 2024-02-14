@@ -19,14 +19,11 @@
 				<i class="fa-solid fa-bars"></i>
 			</button>
 			<span>Nimble Nexus</span>
-			<div class="search">
-				<input type="text" placeholder="Search Notices" />
-				<i class="fa-solid fa-magnifying-glass"></i>
-			</div>
 		</div>
 
 		<%- include('components/navbar') %>
 		<!-- update from here -->
+
 		<div class="container">
 			<h1 class="form-title">Sign up</h1>
 			<form action="register" method="post">
@@ -37,7 +34,7 @@
 							type="text"
 							id="fullName"
 							name="fullName"
-							placeholder="Enter Full Name" />
+							placeholder="eg: pooja" />
 					</div>
 					<div class="user-input-box">
 						<label for="Id no">ID_no</label>
@@ -45,7 +42,8 @@
 							type="text"
 							id="ID_no"
 							name="ID"
-							placeholder="Enter ID no" />
+							pattern="^SNCOUG\d{6}$"
+							placeholder="eg: SNCOUG000000" />
 					</div>
 					<div class="user-input-box">
 						<label for="email">Email</label>
@@ -53,7 +51,7 @@
 							type="email"
 							id="email"
 							name="email"
-							placeholder="Enter Email" />
+							placeholder="eg: pooja@gmail.com" />
 					</div>
 					<div class="user-input-box">
 						<label for="phoneNumber">Phone Number</label>
@@ -61,7 +59,8 @@
 							type="text"
 							id="phoneNumber"
 							name="phone"
-							placeholder="Enter Phone Number" />
+							pattern="^\+91\d{10}$"
+							placeholder="+910000000000" />
 					</div>
 					<div class="user-input-box">
 						<label for="password">Password</label>
@@ -69,6 +68,7 @@
 							type="password"
 							id="password"
 							name="password"
+							pattern="^(?=.*\d)(?=.*[!@#$%^&*])(?=.*[a-zA-Z]).{8,}$"
 							placeholder="Enter Password" />
 					</div>
 					<div class="user-input-box">
@@ -87,19 +87,22 @@
 							type="radio"
 							name="gender"
 							id="male"
-							value="male" />
+							value="male"
+							required />
 						<label for="male">Male</label>
 						<input
 							type="radio"
 							name="gender"
 							id="female"
-							value="female" />
+							value="female"
+							required />
 						<label for="female">Female</label>
 						<input
 							type="radio"
 							name="gender"
 							id="other"
-							value="other" />
+							value="other"
+							required />
 						<label for="other">Other</label>
 					</div>
 				</div>

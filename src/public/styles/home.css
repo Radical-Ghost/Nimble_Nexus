@@ -64,6 +64,7 @@
 	width: 46%;
 	background-color: var(--fore-c);
 	border-radius: 16px;
+	color: var(--change-text);
 }
 
 .notice3 {

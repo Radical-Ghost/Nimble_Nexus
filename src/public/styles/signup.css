@@ -1,4 +1,5 @@
 @import "navbar.css";
+
 * {
 	padding: 0;
 	margin: 0;
@@ -7,38 +8,38 @@
 
 body {
 	display: flex;
-	height: 100vh;
 	justify-content: center;
 	align-items: center;
-	background: var(--fore-c);
 	background-size: cover;
 }
 
 .container {
 	width: 100%;
-	max-width: 650px;
+	max-width: 60.9375rem;
 	background: var(--fore-c);
-	padding: 28px;
-	margin: 0 28px;
-	border-radius: 10px;
-	border: 2px solid var(--border-c);
+	padding: 2.625rem;
+	margin: 0 2.625rem;
+	border-radius: 0.9375rem;
+	border: 0.1875rem solid var(--border-c);
 }
 
 .form-title {
-	font-size: 26px;
+	font-size: 2.4375rem;
 	font-weight: 600;
 	text-align: center;
-	padding-bottom: 6px;
+	padding-bottom: 0.5625rem;
 	color: var(--change-text);
-	text-shadow: 2px 2px 2px 2px var(--fore-c);
-	border-bottom: solid 1px var(--change-text);
+	text-shadow: 0.1875rem 0.1875rem 0.1875rem 0.1875rem var(--fore-c);
+	border-bottom: solid 0.09375rem var(--change-text);
 }
 
 .main-user-info {
-	display: flex;
-	flex-wrap: wrap;
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: auto auto auto;
 	justify-content: space-between;
-	padding: 20px 0;
+	padding: 1.875rem 0;
 }
 
 .user-input-box:nth-child(2n) {
@@ -48,16 +49,17 @@ body {
 .user-input-box {
 	display: flex;
 	flex-wrap: wrap;
-	width: 50%;
-	padding-bottom: 15px;
+	width: 100%;
+	padding-bottom: 1.40625rem;
+	box-sizing: border-box;
 }
 
 .user-input-box label {
 	width: 95%;
 	color: var(--change-text);
-	font-size: 20px;
+	font-size: 1.875rem;
 	font-weight: 400;
-	margin: 5px 0;
+	margin: 0.46875rem 0;
 }
 
 input {
@@ -65,29 +67,30 @@ input {
 }
 
 .user-input-box input {
-	background: transparent;
-	height: 40px;
+	background: var(--back-c);
+	height: 3.75rem;
+	font-size: 1.875rem;
 	width: 95%;
-	border-radius: 7px;
+	border-radius: 0.65625rem;
 	outline: none;
-	border: 2px solid var(--border-c);
-	padding: 0 10px;
+	border: 0.1875rem solid var(--border-c);
+	padding: 0 0.9375rem;
 }
 
 .gender-title {
 	color: var(--change-text);
-	font-size: 24px;
+	font-size: 2.25rem;
 	font-weight: 600;
-	border-bottom: 1px solid var(--change-text);
+	border-bottom: 0.09375rem solid var(--change-text);
 }
 
 .gender-category {
-	margin: 15px 0;
+	margin: 1.40625rem 0;
 	color: var(--change-text);
 }
 
 .gender-category label {
-	padding: 0 20px 0 5px;
+	padding: 0 1.875rem 0 0.46875rem;
 }
 
 .gender-category label,
@@ -97,17 +100,17 @@ input {
 }
 
 .form-submit-btn {
-	margin-top: 40px;
+	margin-top: 3.75rem;
 }
 
 .form-submit-btn button {
 	display: block;
 	width: 100%;
-	margin-top: 10px;
-	font-size: 20px;
-	padding: 10px;
+	margin-top: 0.9375rem;
+	font-size: 1.875rem;
+	padding: 0.9375rem;
 	border: none;
-	border-radius: 3px;
+	border-radius: 0.28125rem;
 	color: var(--change-text);
 	background: rgba(24, 224, 74, 0.7);
 }
@@ -117,13 +120,13 @@ input {
 	color: var(--change-text);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5rem) {
 	.container {
-		min-width: 280px;
+		min-width: 26.25rem;
 	}
 
 	.user-input-box {
-		margin-bottom: 12px;
+		margin-bottom: 1.125rem;
 		width: 100%;
 	}
 
@@ -138,7 +141,7 @@ input {
 	}
 
 	.main-user-info {
-		max-height: 380px;
+		max-height: 35.625rem;
 		overflow: auto;
 	}
 

@@ -6,43 +6,43 @@ body {
 	align-items: center;
 	min-height: 100%;
 	width: 100%;
-	background: var(--fore-c);
 	background-position: center;
 }
 
 .wrapper {
-	width: 420px;
+	width: 40%;
 	background: transparent;
-	border: 4px solid var(--border-c);
+	border: 0.25rem solid var(--border-c);
 	backdrop-filter: blur(9px);
 	color: var(--change-text);
-	border-radius: 12px;
-	padding: 30px 40px;
+	background-color: var(--fore-c);
+	border-radius: 0.75rem;
+	padding: 3.75rem 5rem;
 }
 
 .wrapper h1 {
-	font-size: 36px;
+	font-size: 4.5rem;
 	text-align: center;
 }
 
 .wrapper .input-box {
 	position: relative;
 	width: 100%;
-	height: 50px;
-	margin: 30px 0;
+	height: 6.25rem;
+	margin: 3.75rem 0;
 }
 
 .input-box input {
 	width: 100%;
 	height: 100%;
-	background: transparent;
+	background: var(--back-c);
 	border: none;
 	outline: none;
-	border: 2px solid var(--border-c);
-	border-radius: 40px;
-	font-size: 16px;
+	border: 0.125rem solid var(--border-c);
+	border-radius: 2.5rem;
+	font-size: 2rem;
 	color: var(--change-text);
-	padding: 20px 45px 20px 20px;
+	padding: 2.5rem 5.625rem 2.5rem 2.5rem;
 }
 
 .input-box input::placeholder {
@@ -51,27 +51,33 @@ body {
 
 .input-box i {
 	position: absolute;
-	right: 20px;
+	right: 1.25rem;
 	top: 30%;
 	transform: translate(-50%);
-	font-size: 20px;
+	font-size: 2.5rem;
 }
 
 .wrapper .remember-forgot {
 	display: flex;
 	justify-content: space-between;
-	font-size: 14.5px;
-	margin: -15px 0 15px;
+	font-size: 1.8125rem;
+	margin: -0.9375rem 0 0.9375rem;
+}
+
+.remember-forgot .check {
+	display: flex;
+	justify-content: space-between;
+	width: 35%;
+	padding-left: 1rem;
 }
 
 .remember-forgot label input {
 	accent-color: #56fd13;
-	margin-right: 3px;
+	margin-right: 0.1875rem;
 }
 
 .remember-forgot a {
 	accent-color: var(--sub-text);
-	color: ;
 	text-decoration: none;
 }
 
@@ -82,22 +88,22 @@ body {
 
 .wrapper .btn {
 	width: 100%;
-	height: 45px;
+	height: 5.625rem;
 	color: var(--change-text);
 	border: var(--border-c);
 	outline: none;
-	border-radius: 40px;
-	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 2.5rem;
+	box-shadow: 0 0 0.625rem rgba(0, 0, 0, 0.1);
 	cursor: pointer;
-	font-size: 16px;
+	font-size: 2rem;
 	font-weight: 600;
 	background-color: var(--sub-text);
 }
 
 .wrapper .register-link {
-	font-size: 14.5px;
+	font-size: 1.8125rem;
 	text-align: center;
-	margin: 20px 0 15px;
+	margin: 2.5rem 0 1.875rem;
 }
 
 .register-link p a {
@@ -108,4 +114,9 @@ body {
 
 .register-link p a:hover {
 	text-decoration: underline;
+}
+
+.remember-forgot input[type="checkbox"] {
+	transform: scale(2);
+	padding-right: 0.7rem;
 }
