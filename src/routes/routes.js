@@ -17,6 +17,7 @@ const routes = [
 	{ path: "/fe", view: "departments/fe", title: "Departments Fe" },
 	{ path: "/it", view: "departments/it", title: "Departments It" },
 	{ path: "/mech", view: "departments/mech", title: "Departments Mech" },
+	{ path: "/uploadfile", view: "uploadfile", title: "Uploadfile" },
 ];
 
 routes.forEach((route) => {
