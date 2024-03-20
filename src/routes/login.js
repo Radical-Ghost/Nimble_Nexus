@@ -6,19 +6,31 @@ const User = require("../models/user");
 router.post("/login", async (req, res) => {
 	try {
 		const user = await User.findOne({ email: req.body.email });
-		if (user) {
-			const isPasswordMatch = user.password === req.body.password;
-			if (isPasswordMatch) {
-				res.render("home", { title: "Home" });
-			} else {
-				res.status(400).send({ error: "Invalid credentials" });
-			}
-		} else {
+		if (!user) {
 			res.status(400).send({ error: "User not found" });
+		} else {
+			const isPasswordMatch = user.password === req.body.password;
+			if (!isPasswordMatch) {
+				res.status(400).send({ error: "Invalid credentials" });
+			} else {
+				req.session.userID = user._id;
+				req.session.Auth = true;
+				res.render("home", { title: "Home" });
+			}
 		}
 	} catch (error) {
 		res.status(400).send({ error: error.message });
 	}
+});
+
+router.get("/logout", (req, res) => {
+	req.session.destroy((err) => {
+		if (err) {
+			res.status(400).send("Unable to logout");
+		} else {
+			res.render("login", { title: "Login" });
+		}
+	});
 });
 
 module.exports = router;

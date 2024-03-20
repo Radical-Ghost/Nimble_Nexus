@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+require("./login.js");
 
 const routes = [
 	{ path: "/", view: "home", title: "Home" },
@@ -20,8 +21,16 @@ const routes = [
 	{ path: "/uploadfile", view: "uploadfile", title: "Uploadfile" },
 ];
 
+const redirectLogin = (req, res, next) => {
+	if (!req.session.userID) {
+		res.render("login", { title: "Login" });
+	} else {
+		next();
+	}
+};
+
 routes.forEach((route) => {
-	router.get(route.path, function (req, res) {
+	router.get(route.path, redirectLogin, (req, res) => {
 		res.render(route.view, { title: route.title });
 	});
 });

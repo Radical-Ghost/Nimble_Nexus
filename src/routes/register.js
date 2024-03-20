@@ -1,11 +1,12 @@
 const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
+const session = require("express-session");
+const MongoDBsession = require("connect-mongodb-session")(session);
 const User = require("../models/user");
 
 router.post("/register", async (req, res) => {
 	try {
-		console.log("Request Body:", req.body);
 		const user = await User.findOne({ email: req.body.email });
 
 		if (user) {
