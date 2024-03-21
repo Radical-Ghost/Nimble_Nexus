@@ -228,7 +228,7 @@ body {
 }
 
 .sub-department,
-.date {
+.date{
 	display: flex;
 	gap: 0.7rem;
 	cursor: pointer;

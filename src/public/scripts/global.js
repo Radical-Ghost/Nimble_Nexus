@@ -82,7 +82,3 @@ dateItems.forEach((item) => {
 		dateSelect.textContent = item.textContent;
 	});
 });
-
-function toggleNotices() {
-	alert("Notices clicked!");
-}

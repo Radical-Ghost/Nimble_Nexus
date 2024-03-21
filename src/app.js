@@ -28,14 +28,16 @@ app.use(
 		saveUninitialized: false,
 		store: store,
 		userID: null,
-		cookie: {},
+		username: null,
 	})
 );
 
-app.use("", require("./routes/routes.js"));
-app.use("", require("./routes/notice_upload.js"));
-app.use("", require("./routes/register.js"));
-app.use("", require("./routes/login.js"));
+app.use(
+	require("./routes/routes.js"),
+	require("./routes/notice_upload"),
+	require("./routes/register.js"),
+	require("./routes/login.js")
+);
 
 app.listen(port, function () {
 	console.log(`Server is running on http://localhost:${port}`);

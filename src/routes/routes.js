@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-require("./login.js");
+const notices = require("../models/notices");
 
 const routes = [
 	{ path: "/", view: "home", title: "Home" },
@@ -18,11 +18,11 @@ const routes = [
 	{ path: "/fe", view: "departments/fe", title: "Departments Fe" },
 	{ path: "/it", view: "departments/it", title: "Departments It" },
 	{ path: "/mech", view: "departments/mech", title: "Departments Mech" },
-	{ path: "/uploadfile", view: "uploadfile", title: "Uploadfile" },
+	{ path: "/upload_notice", view: "upload_notice", title: "Upload Notice" },
 ];
 
 const redirectLogin = (req, res, next) => {
-	if (!req.session.userID) {
+	if (!req.session.userID && req.url !== "/login" && req.url !== "/signup") {
 		res.render("login", { title: "Login" });
 	} else {
 		next();
@@ -30,8 +30,21 @@ const redirectLogin = (req, res, next) => {
 };
 
 routes.forEach((route) => {
-	router.get(route.path, redirectLogin, (req, res) => {
-		res.render(route.view, { title: route.title });
+	router.get(route.path, redirectLogin, async (req, res) => {
+		if (
+			route.path === "/notice" ||
+			route.path === "/cs" ||
+			route.path === "/aids" ||
+			route.path === "/extc" ||
+			route.path === "/fe" ||
+			route.path === "/it" ||
+			route.path === "/mech"
+		) {
+			const allNotices = await notices.find({});
+			res.render(route.view, { title: route.title, notices: allNotices });
+		} else {
+			res.render(route.view, { title: route.title });
+		}
 	});
 });
 

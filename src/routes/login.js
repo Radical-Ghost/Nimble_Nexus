@@ -15,6 +15,7 @@ router.post("/login", async (req, res) => {
 			} else {
 				req.session.userID = user._id;
 				req.session.Auth = true;
+				req.session.username = user.name;
 				res.render("home", { title: "Home" });
 			}
 		}

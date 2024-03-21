@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+
+		<link rel="stylesheet" href="/styles/upload_notice.css" />
+		<link rel="icon" href="../public/images/logo.png" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+			<div class="sub-heading">Admin</div>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<div class="create-notice">
+			<form
+				action="/upload_notice"
+				method="post"
+				enctype="multipart/form-data">
+				<label for="title">Title:</label>
+				<input type="text" id="title" name="title" required />
+
+				<label for="desc">Description:</label>
+				<input type="text" id="desc" name="desc" required />
+
+				<label for="department">Select Department:</label>
+				<select name="department" id="department" required>
+					<option value="Computer Engineering">COMPS</option>
+					<option value="First Year">FE</option>
+					<option value="Mechanical">MECH</option>
+					<option value="AI & DS">AIDS</option>
+					<option value="Electronics">EXTC</option>
+					<option value="Information Technology">IT</option>
+				</select>
+
+				<label for="notice">Upload Notice:</label>
+				<input type="file" id="notice" name="notice" required />
+				<button type="submit">Upload Notice</button>
+			</form>
+		</div>
+	</body>
+</html>

@@ -8,6 +8,8 @@
 }
 
 .sub-notices {
+	overflow-y: scroll;
+	border: 3px solid var(--border-c);
 	color: var(--change-text);
 	width: 100%;
 	margin: 2% auto;
@@ -15,13 +17,14 @@
 	height: 87%;
 	background-color: var(--fore-c);
 	display: grid;
-	grid-template-columns: 8% 76% 15%;
-	grid-template-rows: 8% 92%;
+	grid-template-columns: 20% 50% 20%;
+	grid-template-rows: 8%;
 	gap: 0.4rem;
 	padding-left: 0.8rem;
 }
 
-.random,
+.heading-dep,
+.heading-down,
 .heading-notice,
 .heading-date {
 	padding-top: 0.6rem;
@@ -35,18 +38,21 @@
 }
 
 .notice-content {
-	grid-column: span 3;
+	grid-column: span 4;
 	display: grid;
-	grid-template-rows: repeat(10, 10%);
 	width: 100%;
 }
 
 .notice-data {
 	display: grid;
-	grid-template-columns: 8% 76% 15%;
+	grid-template-columns: 20% 50% 20%;
 	gap: 0.4rem;
 	align-items: center;
 	justify-items: center;
+}
+
+.notice-data i {
+	grid-column: 4;
 }
 
 .notice-data img {
@@ -54,7 +60,7 @@
 	height: 3rem;
 }
 
-.notice-data p {
-	font-size: 1.5rem;
+.notice-data {
+	font-size: 1.8rem;
 	font-weight: 600;
 }

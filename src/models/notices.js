@@ -10,16 +10,23 @@ const noticeSchema = new mongoose.Schema({
 		type: String,
 		required: true,
 	},
-	dep: {
+	department: {
 		type: String,
+		required: true,
 	},
 	creation_date: {
 		type: Date,
 		default: Date.now,
 	},
-	author: {
+	author_ID: {
 		type: mongoose.Schema.Types.ObjectId,
+		ref: "sessions",
+		required: true,
+	},
+	author_name: {
+		type: String,
 		ref: "User",
+		required: true,
 	},
 	imageId: {
 		type: mongoose.Schema.Types.ObjectId,

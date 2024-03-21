@@ -2,7 +2,6 @@ const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 const multer = require("multer");
-const path = require("path");
 const Notice = require("../models/notices");
 const Upload = require("../models/notice_file");
 const User = require("../models/user");
@@ -30,13 +29,14 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 			destination: req.file.destination,
 		});
 
-		newUpload.save();
+		await newUpload.save();
 
 		const newNotice = new Notice({
 			title: req.body.title,
 			desc: req.body.desc,
-			dep: req.body.dep,
-			author: req.body.author,
+			department: req.body.department,
+			author_ID: req.session.userID,
+			author_name: req.session.username,
 			imageId: newUpload._id.toString(),
 		});
 
@@ -47,7 +47,6 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 		});
 	} catch (err) {
 		console.error("Error:", err);
-		res.status(500).json({ error: err.message });
 	}
 });
 

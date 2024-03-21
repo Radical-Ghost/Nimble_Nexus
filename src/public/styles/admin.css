@@ -6,7 +6,7 @@
 	margin: 2% auto;
 	border-radius: 10px;
 	display: grid;
-	grid-template-columns: repeat(3, 33%);
+	grid-template-columns: repeat(4, 25%);
 	grid-template-rows: 20% 80%;
 }
 
@@ -24,6 +24,11 @@
 	border: 3px solid var(--border-c);
 }
 
+.add-notice {
+	cursor: pointer;
+	padding-left: 1rem;
+}
+
 .status-box i {
 	padding: 2rem;
 	border: 8px solid var(--border-c);
@@ -32,7 +37,7 @@
 
 .board {
 	background-color: var(--fore-c);
-	grid-column: span 3;
+	grid-column: span 4;
 	border-radius: 8px;
 	overflow-y: scroll;
 	border: 3px solid var(--border-c);
