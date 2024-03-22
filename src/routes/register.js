@@ -28,7 +28,7 @@ router.post("/register", async (req, res) => {
 					gender: req.body.gender || "other",
 				});
 				await newUser.save();
-				res.status(200).render("home", {
+				res.status(200).render("department", {
 					title: "Home",
 					message: "Registration successful!",
 				});

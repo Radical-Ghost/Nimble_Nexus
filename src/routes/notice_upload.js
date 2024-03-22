@@ -42,7 +42,7 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 
 		newNotice.save();
 
-		res.render("home", {
+		res.render("department", {
 			title: "Home",
 		});
 	} catch (err) {

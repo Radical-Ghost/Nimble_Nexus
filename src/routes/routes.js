@@ -3,9 +3,8 @@ const router = express.Router();
 const notices = require("../models/notices");
 
 const routes = [
-	{ path: "/", view: "home", title: "Home" },
+	{ path: "/", view: "department", title: "Department" },
 	{ path: "/notice", view: "notice", title: "Notice" },
-	{ path: "/department", view: "department", title: "Department" },
 	{ path: "/queries", view: "queries", title: "Queries" },
 	{ path: "/about", view: "about", title: "About" },
 	{ path: "/admin", view: "admin", title: "Admin" },

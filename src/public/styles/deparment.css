@@ -4,18 +4,9 @@
 	min-width: 100%;
 	min-height: 100%;
 	display: grid;
-	grid-template-columns: 33% 33% 33%;
-	grid-template-rows: 20% 40% 40%;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 0.3fr 1fr 1fr 1fr;
 	grid-template-areas: "p p p" "CS FE IT" "MECH EXTC AIDS";
-}
-
-.heading-text {
-	color: var(--department-text);
-	font-size: 6rem;
-	font-weight: 800;
-	padding: 1.3rem 0 0 0;
-	justify-self: center;
-	grid-column: span 3;
 }
 
 .button-collection {
@@ -30,12 +21,12 @@
 	text-decoration: none;
 	margin: 18px 18px 36px 36px;
 	padding: 0 0 18px 0;
-	font-size: 4rem;
+	font-size: 2rem;
 	border-radius: 24px;
 }
 
 .BUTTON a {
-	color: var(--change-text);
+	color: var(--stext-c);
 	cursor: pointer;
 	text-decoration: none;
 }
@@ -59,25 +50,74 @@
 }
 
 .CS {
-	grid-area: CS;
-}
-
-.FE {
-	grid-area: FE;
+	grid-column: 1;
+	grid-row: 2;
 }
 
 .IT {
-	grid-area: IT;
+	grid-column: 2;
+	grid-row: 2;
 }
 
 .MECH {
-	grid-area: MECH;
-}
-
-.EXTC {
-	grid-area: EXTC;
+	grid-column: 3;
+	grid-row: 2;
 }
 
 .AIDS {
-	grid-area: AIDS;
+	grid-column: 1;
+	grid-row: 3;
+}
+
+.EXTC {
+	grid-column: 2;
+	grid-row: 3;
+}
+
+.FE {
+	grid-column: 3;
+	grid-row: 3;
+}
+
+.ACC {
+	grid-column: 1;
+	grid-row: 4;
+}
+
+.GEN {
+	grid-column: 2;
+	grid-row: 4;
+}
+
+.LIB {
+	grid-column: 3;
+	grid-row: 4;
+}
+
+.scrolling-text {
+	grid-column: span 3;
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	height: fit-content;
+	background-color: var(--main-c);
+}
+
+.scrolling-text p {
+	font-size: 1.6rem;
+	color: var(--stext-c);
+	animation: RightToLeft 15s linear infinite;
+}
+
+.scrolling-text p:hover {
+	animation-play-state: paused;
+}
+
+@keyframes RightToLeft {
+	from {
+		transform: translateX(0%);
+	}
+	to {
+		transform: translateX(-50%);
+	}
 }

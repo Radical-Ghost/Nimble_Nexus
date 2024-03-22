@@ -65,9 +65,14 @@ button[type="submit"]:hover {
 }
 
 .create-notice {
+	justify-self: center;
+	align-self: center;
+	width: 40%;
 	background: transparent;
 	border: 0.25rem solid var(--border-c);
+	backdrop-filter: blur(9px);
 	color: var(--change-text);
 	background-color: var(--fore-c);
 	border-radius: 0.75rem;
+	padding: 3.75rem 5rem;
 }
