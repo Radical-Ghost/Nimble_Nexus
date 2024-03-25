@@ -1,12 +1,22 @@
 @import "navbar.css";
 
-body {
-	font-size: 1.5rem;
-	padding: 1.25rem;
-	margin-left: 25rem;
+form {
+	padding-bottom: 10rem;
+	margin: auto;
+	width: 90rem;
 }
 
-label {
+.create-notice {
+	border-radius: 1rem;
+	border: 0.25rem solid var(--border-c);
+	font-size: 1.5rem;
+	padding: 1.25rem;
+	margin: auto;
+	width: 50%;
+	color: var(--change-text);
+}
+
+.label {
 	font-size: 1.5rem;
 	display: block;
 	margin-top: 1.25rem;
@@ -16,24 +26,25 @@ label {
 input[type="text"],
 select,
 input[type="file"],
-button[type="submit"],
-form {
-	width: 60%;
+button[type="submit"] {
+	width: 100%;
 	margin: auto;
 }
 
 input[type="text"],
 select,
 input[type="file"] {
-	padding: 1rem;
+	border-radius: 1rem;
+	font-size: 1.5rem;
+	padding: 1.5rem;
 	margin-top: 0.5rem;
 	border: 0.05rem solid var(--border-c);
-	border-radius: 0.25rem;
+	color: var(--change-text);
 }
 
 button[type="submit"] {
 	background-color: #4caf50;
-	color: var(--stext-c);
+	color: var(--change-text);
 	padding: 1rem 1.25rem;
 	border: none;
 	border-radius: 0.25rem;
@@ -46,33 +57,7 @@ button[type="submit"]:hover {
 	background-color: #45a049;
 }
 
-@media screen and (min-width: 1024px) {
-	body {
-		font-size: 2rem;
-	}
-
-	form {
-		margin: auto;
-		width: 70rem;
-	}
-
-	input[type="text"],
-	select,
-	input[type="file"],
-	button[type="submit"] {
-		padding: 1.5rem; /* Increase padding */
-	}
-}
-
-.create-notice {
-	justify-self: center;
-	align-self: center;
-	width: 40%;
-	background: transparent;
-	border: 0.25rem solid var(--border-c);
-	backdrop-filter: blur(9px);
-	color: var(--change-text);
-	background-color: var(--fore-c);
-	border-radius: 0.75rem;
-	padding: 3.75rem 5rem;
+.input-field {
+	border-radius: 1rem;
+	background-color: var(--back-c);
 }

@@ -27,19 +27,20 @@
 		<%- include('components/navbar') %>
 		<!-- update from here -->
 
-		<div class="create-notice">
-			<form
-				action="/upload_notice"
-				method="post"
-				enctype="multipart/form-data">
-				<label for="title">Title:</label>
-				<input type="text" id="title" name="title" required />
+		<form
+			action="/upload_notice"
+			method="post"
+			enctype="multipart/form-data"
+			class="forms">
+			<div class="create-notice">
+				<label class="label" for="title">Title:</label>
+				<input type="text" class="input-field" name="title" required />
 
-				<label for="desc">Description:</label>
-				<input type="text" id="desc" name="desc" required />
+				<label class="label" for="desc">Description:</label>
+				<input type="text" class="input-field" name="desc" required />
 
-				<label for="department">Select Department:</label>
-				<select name="department" id="department" required>
+				<label class="label" for="department">Select Department:</label>
+				<select name="department" class="input-field" required>
 					<option value="Computer Engineering">COMPS</option>
 					<option value="First Year">FE</option>
 					<option value="Mechanical">MECH</option>
@@ -48,10 +49,10 @@
 					<option value="Information Technology">IT</option>
 				</select>
 
-				<label for="notice">Upload Notice:</label>
-				<input type="file" id="notice" name="notice" required />
+				<label class="label" for="notice">Upload Notice:</label>
+				<input type="file" class="input-field" name="notice" required />
 				<button type="submit">Upload Notice</button>
-			</form>
-		</div>
+			</div>
+		</form>
 	</body>
 </html>
