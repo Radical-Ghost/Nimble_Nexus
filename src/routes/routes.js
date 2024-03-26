@@ -11,12 +11,14 @@ const routes = [
 	{ path: "/login", view: "login", title: "Login" },
 	{ path: "/signup", view: "signup", title: "Signup" },
 	{ path: "/dashboard", view: "dashboard", title: "Dashboard" },
-	{ path: "/cs", view: "departments/cs", title: "Departments Cs" },
-	{ path: "/aids", view: "departments/aids", title: "Departments Aids" },
-	{ path: "/extc", view: "departments/extc", title: "Departments Extc" },
-	{ path: "/fe", view: "departments/fe", title: "Departments Fe" },
-	{ path: "/it", view: "departments/it", title: "Departments It" },
-	{ path: "/mech", view: "departments/mech", title: "Departments Mech" },
+	{ path: "/cs", view: "departments/cs", title: "Computer Engineering" },
+	{ path: "/aids", view: "departments/aids", title: "AI & DS" },
+	{ path: "/extc", view: "departments/extc", title: "Electronics" },
+	{ path: "/fe", view: "departments/fe", title: "First Year" },
+	{ path: "/it", view: "departments/it", title: "Information Technology" },
+	{ path: "/mech", view: "departments/mech", title: "Mechanical" },
+	{ path: "/acc", view: "departments/acc", title: "Accounts" },
+	{ path: "/lib", view: "departments/lib", title: "Library" },
 	{ path: "/upload_notice", view: "upload_notice", title: "Upload Notice" },
 ];
 
@@ -37,7 +39,9 @@ routes.forEach((route) => {
 			route.path === "/extc" ||
 			route.path === "/fe" ||
 			route.path === "/it" ||
-			route.path === "/mech"
+			route.path === "/mech" ||
+			route.path === "/acc" ||
+			route.path === "/lib"
 		) {
 			const allNotices = await notices.find({});
 			res.render(route.view, { title: route.title, notices: allNotices });
