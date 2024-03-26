@@ -27,6 +27,22 @@
 		<%- include('components/navbar') %>
 		<!-- update from here -->
 
-		<%- include('components/notices-layout', { Main_Notice: true }) %>
+		<div
+			class="notice-content"
+			style="grid-template-rows: repeat(<%= notices.length %>, 10%)">
+			<% notices.forEach(notice => { %>
+			<div class="notice-data">
+				<span><%= notice.department %></span>
+				<p><%= notice.title %></p>
+				<span
+					><% let date = new Date(notice.creation_date); let
+					formattedDate = date.getDate() + ' - ' + (date.getMonth() +
+					1) + ' - ' + date.getFullYear(); %> <%= formattedDate
+					%></span
+				>
+				<i class="fa-solid fa-download"></i>
+			</div>
+			<% }); %>
+		</div>
 	</body>
 </html>
