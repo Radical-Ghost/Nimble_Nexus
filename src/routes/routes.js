@@ -1,6 +1,7 @@
 const express = require("express");
 const router = express.Router();
 const notices = require("../models/notices");
+const User = require("../models/user");
 
 const routes = [
 	{ path: "/", view: "department", title: "Department" },
@@ -24,7 +25,7 @@ const routes = [
 
 const redirectLogin = (req, res, next) => {
 	if (!req.session.userID && req.url !== "/login" && req.url !== "/signup") {
-		res.render("login", { title: "Login" });
+		res.render("login", { title: "Login", isAdmin: req.isAdmin });
 	} else {
 		next();
 	}
@@ -32,6 +33,16 @@ const redirectLogin = (req, res, next) => {
 
 routes.forEach((route) => {
 	router.get(route.path, redirectLogin, async (req, res) => {
+		if (req.session.userID) {
+			const user = await User.findById(req.session.userID);
+			if (user && user.admin) {
+				req.isAdmin = true;
+			} else {
+				req.isAdmin = false;
+			}
+		} else {
+			req.isAdmin = false;
+		}
 		if (
 			route.path === "/notice" ||
 			route.path === "/cs" ||
@@ -44,9 +55,16 @@ routes.forEach((route) => {
 			route.path === "/lib"
 		) {
 			const allNotices = await notices.find({});
-			res.render(route.view, { title: route.title, notices: allNotices });
+			res.render(route.view, {
+				title: route.title,
+				notices: allNotices,
+				isAdmin: req.isAdmin,
+			});
 		} else {
-			res.render(route.view, { title: route.title });
+			res.render(route.view, {
+				title: route.title,
+				isAdmin: req.isAdmin,
+			});
 		}
 	});
 });

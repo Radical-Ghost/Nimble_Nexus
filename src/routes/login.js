@@ -16,7 +16,10 @@ router.post("/login", async (req, res) => {
 				req.session.userID = user._id;
 				req.session.Auth = true;
 				req.session.username = user.name;
-				res.render("department", { title: "Home" });
+				res.render("department", {
+					title: "Home",
+					isAdmin: user.admin,
+				});
 			}
 		}
 	} catch (error) {
@@ -29,7 +32,7 @@ router.get("/logout", (req, res) => {
 		if (err) {
 			res.status(400).send("Unable to logout");
 		} else {
-			res.render("login", { title: "Login" });
+			res.render("login", { title: "Login", isAdmin: false });
 		}
 	});
 });

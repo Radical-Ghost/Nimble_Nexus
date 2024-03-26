@@ -31,6 +31,7 @@ router.post("/register", async (req, res) => {
 				res.status(200).render("department", {
 					title: "Home",
 					message: "Registration successful!",
+					isAdmin: false,
 				});
 			}
 		}
