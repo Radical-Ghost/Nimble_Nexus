@@ -28,7 +28,7 @@
 }
 
 .scrolling-text p {
-	font-size: 1.6rem;
+	font-size: 3rem;
 	color: var(--stext-c);
 	animation: RightToLeft 15s linear infinite;
 }
