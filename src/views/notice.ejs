@@ -27,22 +27,40 @@
 		<%- include('components/navbar') %>
 		<!-- update from here -->
 
-		<div
-			class="notice-content"
-			style="grid-template-rows: repeat(<%= notices.length %>, 10%)">
-			<% notices.forEach(notice => { %>
-			<div class="notice-data">
-				<span><%= notice.department %></span>
-				<p><%= notice.title %></p>
-				<span
-					><% let date = new Date(notice.creation_date); let
-					formattedDate = date.getDate() + ' - ' + (date.getMonth() +
-					1) + ' - ' + date.getFullYear(); %> <%= formattedDate
-					%></span
-				>
-				<i class="fa-solid fa-download"></i>
+		<div class="notices">
+			<div class="search-bar">
+				<div class="search">
+					<input type="text" placeholder="Search Notices" />
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
 			</div>
-			<% }); %>
+
+			<div class="sub-notices">
+				<div class="heading-dep">Dep</div>
+				<div class="heading-notice">Notices</div>
+				<div class="heading-date">Date</div>
+				<div class="heading-down">View</div>
+
+				<div
+					class="notice-content"
+					style="
+						grid-template-rows: repeat(<%= notices.length %>, 10%);
+					">
+					<% notices.forEach(notice => { %>
+					<div class="notice-data">
+						<span><%= notice.department %></span>
+						<p><%= notice.title %></p>
+						<span
+							><% let date = new Date(notice.creation_date); let
+							formattedDate = date.getDate() + ' - ' +
+							(date.getMonth() + 1) + ' - ' + date.getFullYear();
+							%> <%= formattedDate %></span
+						>
+						<i class="fa-solid fa-download"></i>
+					</div>
+					<% }); %>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
