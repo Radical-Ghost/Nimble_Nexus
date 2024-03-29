@@ -46,7 +46,7 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 
 		res.render("department", {
 			title: "Home",
-			isAdmin: req.isAdmin,
+			isAdmin: true,
 		});
 	} catch (err) {
 		console.error("Error:", err);
