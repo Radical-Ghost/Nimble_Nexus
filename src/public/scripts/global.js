@@ -33,7 +33,7 @@ function toggleTheme() {
 	}
 }
 
-// queries
+//queries
 const showreply = document.querySelectorAll(".replies");
 
 showreply.forEach((btn) =>
@@ -64,7 +64,7 @@ for (let i = 0; i < helpful.length; i++) {
 	});
 }
 
-//  Dropdown
+//dropdowns
 const departmentItems = document.querySelectorAll(".sub-department-item");
 const departmentSelect = document.querySelector(".select-department");
 
@@ -109,6 +109,7 @@ document.querySelectorAll(".notice-data").forEach((noticeDiv) => {
 		img.style.height = "90vh";
 
 		modal.appendChild(img);
+
 		document.body.appendChild(modal);
 
 		modal.addEventListener("click", () => {

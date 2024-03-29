@@ -17,7 +17,7 @@
 			style="grid-template-rows: repeat(<%= notices.length %>, 10%)">
 			<% notices.forEach(notice => { %> <% if (notice.department ===
 			notice_name) { %>
-			<div class="notice-data">
+			<div class="notice-data" id="<%= notice.imageId %>">
 				<span><%= notice.department %></span>
 				<p><%= notice.title %></p>
 				<span
