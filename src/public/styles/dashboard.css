@@ -6,24 +6,29 @@ body {
 }
 
 .container {
+	font-size: 1.5rem;
 	display: grid;
-	grid-template-columns: 20% 30% 5% 25% 20%;
+	grid-template-columns: 20% 60% 20%;
 	grid-template-rows: 60% 10% 30%;
 	width: 90%;
 	height: 80%;
 }
 
 .container p {
+	text-align: center;
 	font-size: 3rem;
 	font-weight: 600;
 }
 
 .container button {
-	background-color: var(--main-c);
+	width: fit-content;
+	margin-top: 1rem;
+	height: 3rem;
 	color: #fff;
 	padding: 10px 45px;
 	border: 1px solid transparent;
 	border-radius: 0.5rem;
+	font-size: 1.1rem;
 	font-weight: 600;
 	text-transform: uppercase;
 	cursor: pointer;
@@ -36,8 +41,9 @@ body {
 	padding: 10px 15px;
 	font-size: 13px;
 	border-radius: 8px;
-	width: 100%;
+	width: 80%;
 	outline: none;
+	justify-content: left;
 }
 
 .sub-container {
@@ -53,24 +59,24 @@ body {
 .txt {
 	text-align: left;
 }
-
+#placeholder {
+	height: 10 rem;
+	width: 10rem;
+}
 .f-container {
-	width: 100%;
-	height: 100%;
+	width: 80%;
 	color: var(--change-text);
 	grid-area: 1 / 1 / 4 / 4;
-	border-radius: 6rem 0 0 6rem;
 	overflow: hidden;
 }
 
 .s-container {
-	width: 100%;
-	height: 100%;
 	color: var(--change-text);
 	grid-area: 1 / 3 / 4 / 6;
 	border-radius: 6rem 0 0 6rem;
-	overflow: hidden;
 	background-color: var(--main-c);
+	overflow: hidden;
+	grid-template-rows: 20% 10% 10% 10% 10% 10% 10% 20%;
 }
 
 .info-table {
@@ -81,6 +87,15 @@ body {
 	margin: 3rem;
 }
 
+.outer {
+	display: grid;
+	color: var(--change-text);
+	background-color: var(--sub-text);
+	grid-area: 2 / 2 / 4 / 3;
+	border-radius: 2rem;
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+}
+
 .row {
 	width: 100%;
 	display: flex;
@@ -89,10 +104,23 @@ body {
 	justify-content: space-between;
 }
 
-.outer {
-	color: var(--change-text);
+.gen {
+	width: 70%;
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	justify-content: space-between;
+}
+
+.heading-outer {
+	padding-top: 1.5rem;
+}
+
+.save {
+	background-color: var(--main-c);
+}
+
+.forgot-pass {
+	justify-self: right;
 	background-color: var(--sub-text);
-	grid-area: 2 / 2 / 4 / 5;
-	border-radius: 2rem;
-	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
 }

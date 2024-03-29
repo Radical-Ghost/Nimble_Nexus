@@ -153,6 +153,30 @@ body {
 	grid-template-rows: auto 1fr auto;
 	transform: translateX(-100%);
 	transition: all 0.4s ease;
+	width: 10%;
+}
+
+.slider li {
+	width: 100%;
+}
+
+.slider li button,
+.slider li a {
+	width: 100%;
+	display: grid;
+	grid-template-columns: 30% 70%;
+}
+
+.slider li a i,
+.slider li button i {
+	grid-column: 1;
+	justify-self: left;
+}
+
+.slider li a p,
+.slider li button p {
+	grid-column: 2;
+	justify-self: left;
 }
 
 .up-bar {
