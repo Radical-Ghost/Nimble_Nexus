@@ -26,55 +26,78 @@
 		<%- include('components/navbar') %>
 		<!-- update from here -->
 
-		<div class="container" id="container">
-			<div class="f-container">
-				<form>
-					<h1>Personal information</h1>
-					<div class="row">
-						<label for="name" class="txt">Name: </label>
-						<input type="name" placeholder="Name" />
-					</div>
+		<div class="container">
+			<div class="sub-container">
+				<div class="f-container">
+					<form class="info-table">
+						<p>Personal information</p>
+						<div class="row">
+							<label for="name" class="txt">Name: </label>
+							<input type="name" placeholder="Name" />
+						</div>
 
-					<div class="row">
-						<label for="Email" class="txt">Email: </label>
-						<input type="email" placeholder="Email" />
-					</div>
+						<div class="row">
+							<label for="Email" class="txt">Email: </label>
+							<input type="email" placeholder="Email" />
+						</div>
 
-					<div class="row">
-						<label for="Phone_no" class="txt">Phone_no: </label>
-						<input type="Phone" placeholder="Phone" />
-					</div>
+						<div class="row">
+							<label for="Phone" class="txt">Phone: </label>
+							<input type="Phone" placeholder="Phone" />
+						</div>
 
-					<div class="row">
-						<label for="DOB" class="txt">Date_of_birth: </label>
-						<input type="DOB" placeholder="Date of Birth" />
-					</div>
+						<div class="row">
+							<label for="DOB" class="txt">Date_of_birth: </label>
+							<input type="DOB" placeholder="Date of Birth" />
+						</div>
 
-					<div class="row">
-						<label for="Age" class="txt">Age: </label>
-						<input type="Age" placeholder="Age" />
-					</div>
+						<div class="row">
+							<label for="Age" class="txt">Age: </label>
+							<input type="Age" placeholder="Age" />
+						</div>
 
-					<a href="#">Modify details</a>
-					<button>Modify</button>
-				</form>
-			</div>
-			<div class="s-container">
-				<div class="table">
-					<h1>General information</h1>
-					<input type="Department" placeholder="Department" />
-					<input type="Role" placeholder="Role" />
-					<input type="year" placeholder="Academic year" />
-					<input type="Caste" placeholder="Caste category" />
-					<input type="GR" placeholder="GR No" />
+						<a href="#"> <button>Save</button></a>
+					</form>
+				</div>
 
-					<button class="hidden" id="register">
-						forgot password
-					</button>
+				<div class="s-container">
+					<form class="info-table">
+						<p>General information</p>
+						<div class="row">
+							<label for="Department" class="txt"
+								>Department:
+							</label>
+							<input type="department" placeholder="department" />
+						</div>
+
+						<div class="row">
+							<label for="Role" class="txt">Role: </label>
+							<input type="Role" placeholder="Role" />
+						</div>
+
+						<div class="row">
+							<label for="Year" class="txt">Year: </label>
+							<input type="Year" placeholder="Academic-year" />
+						</div>
+
+						<div class="row">
+							<label for="Caste" class="txt">Caste:</label>
+							<input type="Caste" placeholder="Caste/Category" />
+						</div>
+
+						<div class="row">
+							<label for="GR_NO" class="txt">GR_NO:</label>
+							<input type="GR_NO" placeholder="GR_NO" />
+						</div>
+
+						<a href="#"> <button>Forgot Password</button></a>
+					</form>
 				</div>
 			</div>
 
-			<div class="outer">My Queries</div>
+			<div class="outer">
+				<p>My Queries</p>
+			</div>
 		</div>
 	</body>
 </html>

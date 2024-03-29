@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const path = require("path");
 const router = express.Router();
 const multer = require("multer");
 const Notice = require("../models/notices");
@@ -27,6 +28,7 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 		const newUpload = new Upload({
 			originalname: req.file.originalname,
 			destination: req.file.destination,
+			newname: req.file.filename,
 		});
 
 		await newUpload.save();
@@ -48,6 +50,16 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 		});
 	} catch (err) {
 		console.error("Error:", err);
+	}
+});
+
+router.get("/uploads/:imageId", async (req, res) => {
+	try {
+		const upload = await Upload.findById(req.params.imageId);
+		res.sendFile(path.join(__dirname, "../../uploads", upload.newname));
+	} catch (err) {
+		console.error("Error:", err);
+		res.status(500).send("An error occurred while retrieving the image");
 	}
 });
 

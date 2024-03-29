@@ -33,7 +33,7 @@ function toggleTheme() {
 	}
 }
 
-// queries
+//queries
 const showreply = document.querySelectorAll(".replies");
 
 showreply.forEach((btn) =>
@@ -64,7 +64,7 @@ for (let i = 0; i < helpful.length; i++) {
 	});
 }
 
-//  Dropdown
+//dropdowns
 const departmentItems = document.querySelectorAll(".sub-department-item");
 const departmentSelect = document.querySelector(".select-department");
 
@@ -81,4 +81,55 @@ dateItems.forEach((item) => {
 	item.addEventListener("click", () => {
 		dateSelect.textContent = item.textContent;
 	});
+});
+
+document.querySelectorAll(".notice-data").forEach((noticeDiv) => {
+	noticeDiv.addEventListener("click", async () => {
+		const imageId = noticeDiv.id;
+		const response = await fetch(`/uploads/${imageId}`);
+		const image = await response.blob();
+		const imageUrl = URL.createObjectURL(image);
+
+		const modal = document.createElement("div");
+		modal.style.position = "fixed";
+		modal.style.left = "0";
+		modal.style.top = "0";
+		modal.style.width = "100%";
+		modal.style.height = "100%";
+		modal.style.backgroundColor = "rgba(0, 0, 0, 0.5)";
+		modal.style.display = "flex";
+		modal.style.justifyContent = "center";
+		modal.style.alignItems = "center";
+		modal.style.zIndex = "1000";
+
+		const img = document.createElement("img");
+		img.src = imageUrl;
+
+		img.style.width = "90vw";
+		img.style.height = "90vh";
+
+		modal.appendChild(img);
+
+		document.body.appendChild(modal);
+
+		modal.addEventListener("click", () => {
+			document.body.removeChild(modal);
+		});
+	});
+});
+
+let input = document.querySelector(".search input");
+
+input.addEventListener("input", function () {
+	let filter = input.value.toUpperCase();
+	let notices = document.querySelectorAll(".notice-data");
+
+	for (let i = 0; i < notices.length; i++) {
+		let title = notices[i].querySelector("p").textContent;
+		if (title.toUpperCase().indexOf(filter) > -1) {
+			notices[i].style.display = "";
+		} else {
+			notices[i].style.display = "none";
+		}
+	}
 });

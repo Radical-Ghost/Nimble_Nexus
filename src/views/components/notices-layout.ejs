@@ -15,8 +15,9 @@
 		<div
 			class="notice-content"
 			style="grid-template-rows: repeat(<%= notices.length %>, 10%)">
-			<% notices.forEach(notice => { %>
-			<div class="notice-data">
+			<% notices.forEach(notice => { %> <% if (notice.department ===
+			notice_name) { %>
+			<div class="notice-data" id="<%= notice.imageId %>">
 				<span><%= notice.department %></span>
 				<p><%= notice.title %></p>
 				<span
@@ -27,7 +28,7 @@
 				>
 				<i class="fa-solid fa-download"></i>
 			</div>
-			<% }); %>
+			<% } %> <% }); %>
 		</div>
 	</div>
 </div>
