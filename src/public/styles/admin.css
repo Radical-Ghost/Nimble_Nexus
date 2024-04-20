@@ -45,12 +45,12 @@
 
 .table-header td {
 	border-bottom: 2px solid var(--change-text);
-	font-size: 1.3rem;
+	font-size: 1.8rem;
 	font-weight: 700;
 }
 
 .board h5 {
-	font-weight: 600;
+	font-weight: 500;
 	font-size: 18px;
 }
 
@@ -86,17 +86,4 @@ tbody tr td {
 .roll p {
 	color: var(--change-text);
 	font-size: 1.6rem;
-}
-
-.edit {
-	width: 15%;
-}
-
-.edit a {
-	color: var(--change-text);
-	background-color: var(--border-c);
-	border: 3px solid var(--border-c);
-	border-radius: 15rem;
-	padding: 0.2rem;
-	text-decoration: none;
 }

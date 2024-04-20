@@ -71,30 +71,7 @@
 							<td>Department</td>
 							<td>Year</td>
 							<td>Roll no</td>
-							<td>
-								<div class="dropdowns">
-									<div class="sub-department">
-										<span class="select-department"
-											>Name</span
-										>
-										<i class="fa-solid fa-sort-down"></i>
-										<div class="sub-department-content">
-											<div class="sub-department-item">
-												Name
-											</div>
-											<div class="sub-department-item">
-												Department
-											</div>
-											<div class="sub-department-item">
-												Year
-											</div>
-											<div class="sub-department-item">
-												GR No.
-											</div>
-										</div>
-									</div>
-								</div>
-							</td>
+							<td>Phone no</td>
 						</tr>
 					</thead>
 					<tbody>
@@ -121,10 +98,12 @@
 							</td>
 
 							<td class="roll">
-								<p><%= user.ID %></p>
+								<h5><%= user.ID %></h5>
 							</td>
 
-							<td class="edit"><a href="#">Edit</a></td>
+							<td>
+								<h5><%= user.phoneNumber %></h5>
+							</td>
 						</tr>
 						<% }); %>
 					</tbody>
