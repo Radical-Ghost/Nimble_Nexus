@@ -36,15 +36,18 @@ const userSchema = new mongoose.Schema({
 	},
 	gender: {
 		type: String,
+		default: "Not Specified",
 	},
 	casteCategory: {
 		type: String,
 	},
 	academicYear: {
 		type: String,
+		default: "000",
 	},
 	department: {
 		type: String,
+		default: "Not Specified",
 	},
 });
 

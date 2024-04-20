@@ -27,12 +27,12 @@
 
 		<div class="department-sub">
 			<div class="scrolling-text">
-				<p>
-					Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-					Distinctio officiis exercitationem, quidem voluptatem
-					dolores vero quia, nostrum quibusdam voluptatum alias
-					tempore, minima impedit? Non, debitis in! Rem autem unde
-					iusto.
+				<p data-text="<% for(let i = 0; i < notices.length; i++) { %> 
+					<%= i + 1 %>. <%= notices[i].title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<% } %>">
+					<% for(let i = 0; i < notices.length; i++) { %> 
+					<%= i + 1 %>. <%= notices[i].title %>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<% } %>
 				</p>
 			</div>
 

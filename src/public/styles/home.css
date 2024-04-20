@@ -28,9 +28,10 @@
 }
 
 .scrolling-text p {
+	padding-left: 20%;
 	font-size: 3rem;
 	color: var(--stext-c);
-	animation: RightToLeft 15s linear infinite;
+	animation: RightToLeft 60s linear infinite;
 }
 
 .scrolling-text p:hover {

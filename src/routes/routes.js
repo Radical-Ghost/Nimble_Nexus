@@ -4,7 +4,7 @@ const notices = require("../models/notices");
 const User = require("../models/user");
 
 const routes = [
-	{ path: "/", view: "department", title: "Department" },
+	{ path: "/", view: "department", title: "Home" },
 	{ path: "/notice", view: "notice", title: "Notice" },
 	{ path: "/queries", view: "queries", title: "Queries" },
 	{ path: "/about", view: "about", title: "About" },
@@ -58,6 +58,25 @@ routes.forEach((route) => {
 			res.render(route.view, {
 				title: route.title,
 				notices: allNotices,
+				isAdmin: req.isAdmin,
+			});
+		} else if (route.path === "/") {
+			const sorted_notices = await notices
+				.find()
+				.sort({ creation_date: "desc" })
+				.limit(10);
+			res.render(route.view, {
+				title: route.title,
+				notices: sorted_notices,
+				isAdmin: req.isAdmin,
+			});
+		} else if (route.path === "/admin") {
+			const no_notices = await notices.countDocuments();
+			const all_users = await User.find({});
+			res.render(route.view, {
+				title: route.title,
+				notices: no_notices,
+				users: all_users,
 				isAdmin: req.isAdmin,
 			});
 		} else {

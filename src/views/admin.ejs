@@ -31,7 +31,7 @@
 			<div class="status-box">
 				<i class="fas fa-users"></i>
 				<div>
-					<h3>8,267</h3>
+					<h3><%= users.length %></h3>
 					<span>Students</span>
 				</div>
 			</div>
@@ -40,14 +40,14 @@
 				<i class="fa-solid fa-question"></i>
 				<div>
 					<h3>10</h3>
-					<span> Queries</span>
+					<span>Queries</span>
 				</div>
 			</div>
 
 			<div class="status-box">
 				<i class="fa-sharp fa-solid fa-bell"></i>
 				<div>
-					<h3>8,267</h3>
+					<h3><%= notices %></h3>
 					<span>Notices</span>
 				</div>
 			</div>
@@ -67,6 +67,7 @@
 					<thead>
 						<tr class="table-header">
 							<td>Name</td>
+							<td>Admin</td>
 							<td>Department</td>
 							<td>Year</td>
 							<td>Roll no</td>
@@ -88,7 +89,7 @@
 												Year
 											</div>
 											<div class="sub-department-item">
-												Roll NO
+												GR No.
 											</div>
 										</div>
 									</div>
@@ -97,30 +98,35 @@
 						</tr>
 					</thead>
 					<tbody>
+						<% users.forEach(user => { %>
 						<tr>
 							<td class="people">
 								<i class="fa-solid fa-user"></i>
 								<div class="people-de">
-									<h5>Pooja Mayekar</h5>
-									<p>pooja@gmail.com</p>
+									<h5><%= user.name %></h5>
+									<p><%= user.email %></p>
 								</div>
 							</td>
 
 							<td>
-								<h5>Comps</h5>
+								<h5><%= user.admin %></h5>
+							</td>
+
+							<td>
+								<h5><%= user.department %></h5>
 							</td>
 
 							<td class="year">
-								<h5>Second</h5>
-								<p>A div</p>
+								<h5><%= user.academicYear %></h5>
 							</td>
 
 							<td class="roll">
-								<p>364</p>
+								<p><%= user.ID %></p>
 							</td>
 
 							<td class="edit"><a href="#">Edit</a></td>
 						</tr>
+						<% }); %>
 					</tbody>
 				</table>
 			</div>

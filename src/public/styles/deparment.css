@@ -116,9 +116,10 @@
 }
 
 .scrolling-text p {
+	margin-left: 2%;
 	font-size: 2.5rem;
 	color: var(--stext-c);
-	animation: RightToLeft 15s linear infinite;
+	animation: RightToLeft 60s linear infinite;
 }
 
 .scrolling-text p:hover {
