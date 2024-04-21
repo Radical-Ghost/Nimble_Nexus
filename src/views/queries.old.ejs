@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+
+		<link rel="stylesheet" href="/styles/queries.css" />
+		<link rel="icon" href="../public/images/logo.png" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+			<p class="sub-heading">Queries</p>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<div class="queires">
+			<div class="search-bar">
+				<div class="search">
+					<input type="text" placeholder="Search Notices" />
+					<i class="fa-solid fa-magnifying-glass"></i>
+				</div>
+			</div>
+
+			<div class="query-container opened parent" id="comment-1">
+				<div class="query-card">
+					<div class="query-header">
+						<img src="		/images/logo.png" class="profile-pic" />
+						<span class="profile-name">Soham</span>
+					</div>
+
+					<h2 class="title">The First Query</h2>
+					<p class="query-body">
+						Lorem ipsum dolor sit amet consectetur adipisicing elit.
+						Voluptatibus totam, repudiandae aspernatur natus
+						dignissimos nisi nihil blanditiis impedit facere vel, id
+						labore adipisci rerum dolore sit placeat ipsam delectus
+						harum!
+					</p>
+					<div class="query-footer">
+						<div class="helpful">17 Found Helpful</div>
+						<div class="reply">
+							<i class="fa-solid fa-reply"></i>
+							<span>Reply</span>
+						</div>
+						<div class="replies">2 Replies</div>
+					</div>
+
+					<div
+						class="query-container"
+						dataset="comment-1"
+						id="reply-1">
+						<div class="query-card">
+							<div class="query-header">
+								<img
+									src="		/images/logo.png"
+									class="profile-pic" />
+								<span class="profile-name">Yash</span>
+							</div>
+
+							<h2 class="title">
+								The First reply to First Query
+							</h2>
+							<p class="query-body">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Voluptatibus totam,
+								repudiandae aspernatur natus dignissimos nisi
+								nihil blanditiis impedit facere vel, id labore
+								adipisci rerum dolore sit placeat ipsam delectus
+								harum!
+							</p>
+							<div class="query-footer">
+								<div class="helpful">17 Found Helpful</div>
+								<div class="reply">
+									<i class="fa-solid fa-reply"></i>
+									<span>Reply</span>
+								</div>
+								<div class="replies">1 Replies</div>
+							</div>
+						</div>
+
+						<div
+							class="query-container"
+							dataset="reply-1"
+							id="reply-1-to-reply-1">
+							<div class="query-card">
+								<div class="query-header">
+									<img
+										src="		/images/logo.png"
+										class="profile-pic" />
+									<span class="profile-name">Pooja</span>
+								</div>
+
+								<h2 class="title">The First Query</h2>
+								<p class="query-body">
+									Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Voluptatibus totam,
+									repudiandae aspernatur natus dignissimos
+									nisi nihil blanditiis impedit facere vel, id
+									labore adipisci rerum dolore sit placeat
+									ipsam delectus harum!
+								</p>
+								<div class="query-footer">
+									<div class="helpful">17 Found Helpful</div>
+									<div class="reply">
+										<i class="fa-solid fa-reply"></i>
+										<span>Reply</span>
+									</div>
+									<div class="replies">0 Replies</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div
+						class="query-container"
+						dataset="comment-1"
+						id="reply-2">
+						<div class="query-card">
+							<div class="query-header">
+								<img
+									src="		/images/logo.png"
+									class="profile-pic" />
+								<span class="profile-name">Atharva</span>
+							</div>
+
+							<h2 class="title">
+								The Second reply to First Query
+							</h2>
+							<p class="query-body">
+								Lorem ipsum dolor sit amet consectetur
+								adipisicing elit. Voluptatibus totam,
+								repudiandae aspernatur natus dignissimos nisi
+								nihil blanditiis impedit facere vel, id labore
+								adipisci rerum dolore sit placeat ipsam delectus
+								harum!
+							</p>
+							<div class="query-footer">
+								<div class="helpful">17 Found Helpful</div>
+								<div class="reply">
+									<i class="fa-solid fa-reply"></i>
+									<span>Reply</span>
+								</div>
+								<div class="replies">1 Replies</div>
+							</div>
+						</div>
+
+						<div
+							class="query-container"
+							dataset="reply-2"
+							id="reply-1-to-reply-2">
+							<div class="query-card">
+								<div class="query-header">
+									<img
+										src="		/images/logo.png"
+										class="profile-pic" />
+									<span class="profile-name">Pooja</span>
+								</div>
+
+								<h2 class="title">The First Query</h2>
+								<p class="query-body">
+									Lorem ipsum dolor sit amet consectetur
+									adipisicing elit. Voluptatibus totam,
+									repudiandae aspernatur natus dignissimos
+									nisi nihil blanditiis impedit facere vel, id
+									labore adipisci rerum dolore sit placeat
+									ipsam delectus harum!
+								</p>
+								<div class="query-footer">
+									<div class="helpful">17 Found Helpful</div>
+									<div class="reply">
+										<i class="fa-solid fa-reply"></i>
+										<span>Reply</span>
+									</div>
+									<div class="replies">0 Replies</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
+
+
+
+
+
+

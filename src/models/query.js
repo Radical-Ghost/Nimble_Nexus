@@ -1,17 +1,20 @@
-const { name } = require("ejs");
 const mongoose = require("mongoose");
 
 const replySchema = new mongoose.Schema({
 	userId: {
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
-		ref: "User",
+		ref: "sessions",
+	},
+	userName: {
+		type: String,
+		required: true,
 	},
 	parentReplyId: {
 		type: mongoose.Schema.Types.ObjectId,
 		ref: "Query",
 	},
-	text: {
+	desc: {
 		type: String,
 		required: true,
 	},
@@ -30,18 +33,20 @@ const querySchema = new mongoose.Schema({
 	userId: {
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
-		ref: "User",
+	},
+	userName: {
+		type: String,
+		required: true,
 	},
 	noticeId: {
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
-		ref: "Notice",
 	},
 	title: {
 		type: String,
 		required: true,
 	},
-	text: {
+	desc: {
 		type: String,
 		required: true,
 	},
@@ -56,4 +61,5 @@ const querySchema = new mongoose.Schema({
 	replies: [replySchema],
 });
 
-module.exports = mongoose.model("Query", querySchema);
+module.exports.Query = mongoose.model("Query", querySchema);
+module.exports.Reply = mongoose.model("Reply", replySchema);

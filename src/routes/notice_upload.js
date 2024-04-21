@@ -37,16 +37,20 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 			title: req.body.title,
 			desc: req.body.desc,
 			department: req.body.department,
-			author_ID: req.session.userID,
-			author_name: req.session.username,
+			author_ID: req.session.userId,
+			author_name: req.session.userName,
 			imageId: newUpload._id.toString(),
 		});
 
 		newNotice.save();
 
-		res.render("department", {
-			title: "Home",
-			isAdmin: true,
+		const no_notices = await Notice.countDocuments();
+		const all_users = await User.find({});
+		res.render("admin", {
+			title: "Admin",
+			notices: no_notices,
+			users: all_users,
+			isAdmin: req.session.isAdmin,
 		});
 	} catch (err) {
 		console.error("Error:", err);

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title><%= title %></title>
+
+		<link rel="stylesheet" href="/styles/upload_query.css" />
+		<link rel="icon" href="../public/images/logo.png" type="image/x-icon" />
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+			integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer" />
+		<script defer src="/scripts/global.js"></script>
+	</head>
+	<body>
+		<div class="logo">
+			<button class="toggle-slider" state="close">
+				<i class="fa-solid fa-bars"></i>
+			</button>
+			<span>Nimble Nexus</span>
+			<div class="sub-heading">Add Query</div>
+		</div>
+
+		<%- include('components/navbar') %>
+		<!-- update from here -->
+
+		<form method="post" action="/upload_reply/<%= queryId %>">
+			<p><%= queryId %></p>
+
+			<label for="desc">Description:</label>
+			<textarea id="desc" name="desc" required></textarea>
+
+			<button type="submit">Submit</button>
+		</form>
+	</body>
+</html>

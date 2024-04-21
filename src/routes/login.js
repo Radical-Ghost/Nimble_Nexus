@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const express = require("express");
 const router = express.Router();
 const User = require("../models/user");
+const notices = require("../models/notices");
 
 router.post("/login", async (req, res) => {
 	try {
@@ -13,12 +14,18 @@ router.post("/login", async (req, res) => {
 			if (!isPasswordMatch) {
 				res.status(400).send({ error: "Invalid credentials" });
 			} else {
-				req.session.userID = user._id;
+				req.session.userId = user._id;
 				req.session.Auth = true;
-				req.session.username = user.name;
+				req.session.userName = user.name;
+				req.session.isAdmin = user.admin;
+				const sorted_notices = await notices
+					.find()
+					.sort({ creation_date: "desc" })
+					.limit(10);
 				res.render("department", {
 					title: "Home",
 					isAdmin: user.admin,
+					notices: sorted_notices,
 				});
 			}
 		}

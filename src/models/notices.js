@@ -1,5 +1,4 @@
 const mongoose = require("mongoose");
-const querySchema = require("./query");
 
 const noticeSchema = new mongoose.Schema({
 	title: {

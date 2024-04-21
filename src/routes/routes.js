@@ -2,6 +2,8 @@ const express = require("express");
 const router = express.Router();
 const notices = require("../models/notices");
 const User = require("../models/user");
+const { Query } = require("../models/query");
+const { Reply } = require("../models/query");
 
 const routes = [
 	{ path: "/", view: "department", title: "Home" },
@@ -21,11 +23,21 @@ const routes = [
 	{ path: "/acc", view: "departments/acc", title: "Accounts" },
 	{ path: "/lib", view: "departments/lib", title: "Library" },
 	{ path: "/upload_notice", view: "upload_notice", title: "Upload Notice" },
+	{
+		path: "/upload_query/:noticeId",
+		view: "upload_query",
+		title: "Upload Query",
+	},
+	{
+		path: "/upload_reply/:queryId",
+		view: "upload_reply",
+		title: "Upload Reply",
+	},
 ];
 
 const redirectLogin = (req, res, next) => {
-	if (!req.session.userID && req.url !== "/login" && req.url !== "/signup") {
-		res.render("login", { title: "Login", isAdmin: req.isAdmin });
+	if (!req.session.userId && req.url !== "/login" && req.url !== "/signup") {
+		res.render("login", { title: "Login", isAdmin: req.session.isAdmin });
 	} else {
 		next();
 	}
@@ -33,16 +45,6 @@ const redirectLogin = (req, res, next) => {
 
 routes.forEach((route) => {
 	router.get(route.path, redirectLogin, async (req, res) => {
-		if (req.session.userID) {
-			const user = await User.findById(req.session.userID);
-			if (user && user.admin) {
-				req.isAdmin = true;
-			} else {
-				req.isAdmin = false;
-			}
-		} else {
-			req.isAdmin = false;
-		}
 		if (
 			route.path === "/notice" ||
 			route.path === "/cs" ||
@@ -58,7 +60,7 @@ routes.forEach((route) => {
 			res.render(route.view, {
 				title: route.title,
 				notices: allNotices,
-				isAdmin: req.isAdmin,
+				isAdmin: req.session.isAdmin,
 			});
 		} else if (route.path === "/") {
 			const sorted_notices = await notices
@@ -68,7 +70,7 @@ routes.forEach((route) => {
 			res.render(route.view, {
 				title: route.title,
 				notices: sorted_notices,
-				isAdmin: req.isAdmin,
+				isAdmin: req.session.isAdmin,
 			});
 		} else if (route.path === "/admin") {
 			const no_notices = await notices.countDocuments();
@@ -77,12 +79,28 @@ routes.forEach((route) => {
 				title: route.title,
 				notices: no_notices,
 				users: all_users,
-				isAdmin: req.isAdmin,
+				isAdmin: req.session.isAdmin,
+			});
+		} else if (
+			route.path === "/queries" ||
+			route.path === "/dashboard" ||
+			route.path === "/upload_query/:noticeId" ||
+			route.path === "/upload_reply/:queryId"
+		) {
+			const allQueries = await Query.find({});
+			const allReplies = await Reply.find({});
+			res.render(route.view, {
+				title: route.title,
+				isAdmin: req.session.isAdmin,
+				queries: allQueries,
+				replies: allReplies,
+				queryId: req.params.queryId,
+				noticeId: req.params.noticeId,
 			});
 		} else {
 			res.render(route.view, {
 				title: route.title,
-				isAdmin: req.isAdmin,
+				isAdmin: req.session.isAdmin,
 			});
 		}
 	});

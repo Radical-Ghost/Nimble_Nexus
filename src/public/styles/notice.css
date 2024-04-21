@@ -64,3 +64,8 @@
 	font-size: 1.8rem;
 	font-weight: 600;
 }
+
+.add-query i {
+	font-size: 2.5rem;
+	color: var(--change-text);
+}

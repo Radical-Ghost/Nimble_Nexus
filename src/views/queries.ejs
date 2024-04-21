@@ -30,326 +30,72 @@
 		<div class="queires">
 			<div class="search-bar">
 				<div class="search">
-					<input type="text" placeholder="Search Notices" />
+					<input type="text" placeholder="Search Queries" />
 					<i class="fa-solid fa-magnifying-glass"></i>
 				</div>
 			</div>
 
-			<div class="query-container opened parent" id="comment-1">
+			<% function renderReply(reply) { %>
+			<div
+				class="query-container"
+				dataset="comment-<%= reply.parentReplyId %>"
+				id="reply-<%= reply._id %>">
 				<div class="query-card">
 					<div class="query-header">
-						<img src="		/images/logo.png" class="profile-pic" />
-						<span class="profile-name">Soham</span>
+						<img src="/images/logo.png" class="profile-pic" />
+						<span class="profile-name"><%= reply.userName %></span>
 					</div>
 
-					<h2 class="title">The First Query</h2>
-					<p class="query-body">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Voluptatibus totam, repudiandae aspernatur natus
-						dignissimos nisi nihil blanditiis impedit facere vel, id
-						labore adipisci rerum dolore sit placeat ipsam delectus
-						harum!
-					</p>
+					<p class="query-body"><%= reply.desc %></p>
 					<div class="query-footer">
-						<div class="helpful">17 Found Helpful</div>
+						<div
+							class="helpful"
+							onclick="toggleLike('<%= reply._id %>')">
+							<%= reply.likes %> Found Helpful
+						</div>
 						<div class="reply">
 							<i class="fa-solid fa-reply"></i>
-							<span>Reply</span>
+							<a href="/upload_reply/<%= reply._id %>">Reply</a>
 						</div>
-						<div class="replies">2 Replies</div>
-					</div>
-
-					<div
-						class="query-container"
-						dataset="comment-1"
-						id="reply-1">
-						<div class="query-card">
-							<div class="query-header">
-								<img
-									src="		/images/logo.png"
-									class="profile-pic" />
-								<span class="profile-name">Yash</span>
-							</div>
-
-							<h2 class="title">
-								The First reply to First Query
-							</h2>
-							<p class="query-body">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Voluptatibus totam,
-								repudiandae aspernatur natus dignissimos nisi
-								nihil blanditiis impedit facere vel, id labore
-								adipisci rerum dolore sit placeat ipsam delectus
-								harum!
-							</p>
-							<div class="query-footer">
-								<div class="helpful">17 Found Helpful</div>
-								<div class="reply">
-									<i class="fa-solid fa-reply"></i>
-									<span>Reply</span>
-								</div>
-								<div class="replies">1 Replies</div>
-							</div>
-						</div>
-
-						<div
-							class="query-container"
-							dataset="reply-1"
-							id="reply-1-to-reply-1">
-							<div class="query-card">
-								<div class="query-header">
-									<img
-										src="		/images/logo.png"
-										class="profile-pic" />
-									<span class="profile-name">Pooja</span>
-								</div>
-
-								<h2 class="title">The First Query</h2>
-								<p class="query-body">
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Voluptatibus totam,
-									repudiandae aspernatur natus dignissimos
-									nisi nihil blanditiis impedit facere vel, id
-									labore adipisci rerum dolore sit placeat
-									ipsam delectus harum!
-								</p>
-								<div class="query-footer">
-									<div class="helpful">17 Found Helpful</div>
-									<div class="reply">
-										<i class="fa-solid fa-reply"></i>
-										<span>Reply</span>
-									</div>
-									<div class="replies">0 Replies</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div
-						class="query-container"
-						dataset="comment-1"
-						id="reply-2">
-						<div class="query-card">
-							<div class="query-header">
-								<img
-									src="		/images/logo.png"
-									class="profile-pic" />
-								<span class="profile-name">Atharva</span>
-							</div>
-
-							<h2 class="title">
-								The Second reply to First Query
-							</h2>
-							<p class="query-body">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Voluptatibus totam,
-								repudiandae aspernatur natus dignissimos nisi
-								nihil blanditiis impedit facere vel, id labore
-								adipisci rerum dolore sit placeat ipsam delectus
-								harum!
-							</p>
-							<div class="query-footer">
-								<div class="helpful">17 Found Helpful</div>
-								<div class="reply">
-									<i class="fa-solid fa-reply"></i>
-									<span>Reply</span>
-								</div>
-								<div class="replies">1 Replies</div>
-							</div>
-						</div>
-
-						<div
-							class="query-container"
-							dataset="reply-2"
-							id="reply-1-to-reply-2">
-							<div class="query-card">
-								<div class="query-header">
-									<img
-										src="		/images/logo.png"
-										class="profile-pic" />
-									<span class="profile-name">Pooja</span>
-								</div>
-
-								<h2 class="title">The First Query</h2>
-								<p class="query-body">
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Voluptatibus totam,
-									repudiandae aspernatur natus dignissimos
-									nisi nihil blanditiis impedit facere vel, id
-									labore adipisci rerum dolore sit placeat
-									ipsam delectus harum!
-								</p>
-								<div class="query-footer">
-									<div class="helpful">17 Found Helpful</div>
-									<div class="reply">
-										<i class="fa-solid fa-reply"></i>
-										<span>Reply</span>
-									</div>
-									<div class="replies">0 Replies</div>
-								</div>
-							</div>
+						<div class="replies">
+							<%= reply.replies.length %> Replies
 						</div>
 					</div>
 				</div>
+				<% if(reply.replies.length > 0) { %> <%
+				reply.replies.forEach(renderReply); %> <% } %>
 			</div>
-
-			<div class="query-container opened parent" id="comment-2">
+			<% } %> <% queries.forEach(query => { %>
+			<div
+				class="query-container opened parent"
+				id="comment-<%= query._id %>">
 				<div class="query-card">
 					<div class="query-header">
-						<img src="		/images/logo.png" class="profile-pic" />
-						<span class="profile-name">Soham</span>
+						<img src="/images/logo.png" class="profile-pic" />
+						<span class="profile-name"><%= query.userName %></span>
 					</div>
 
-					<h2 class="title">The First Query</h2>
-					<p class="query-body">
-						Lorem ipsum dolor sit amet consectetur adipisicing elit.
-						Voluptatibus totam, repudiandae aspernatur natus
-						dignissimos nisi nihil blanditiis impedit facere vel, id
-						labore adipisci rerum dolore sit placeat ipsam delectus
-						harum!
-					</p>
+					<h2 class="title"><%= query.title %></h2>
+					<p class="query-body"><%= query.desc %></p>
 					<div class="query-footer">
-						<div class="helpful">17 Found Helpful</div>
+						<div
+							class="helpful"
+							onclick="toggleLike('<%= query._id %>')">
+							<%= query.likes %> Found Helpful
+						</div>
 						<div class="reply">
 							<i class="fa-solid fa-reply"></i>
-							<span>Reply</span>
+							<a href="/upload_reply/<%= query._id %>">Reply</a>
 						</div>
-						<div class="replies">2 Replies</div>
-					</div>
-
-					<div
-						class="query-container"
-						dataset="comment-2"
-						id="reply-1">
-						<div class="query-card">
-							<div class="query-header">
-								<img
-									src="		/images/logo.png"
-									class="profile-pic" />
-								<span class="profile-name">Yash</span>
-							</div>
-
-							<h2 class="title">
-								The First reply to First Query
-							</h2>
-							<p class="query-body">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Voluptatibus totam,
-								repudiandae aspernatur natus dignissimos nisi
-								nihil blanditiis impedit facere vel, id labore
-								adipisci rerum dolore sit placeat ipsam delectus
-								harum!
-							</p>
-							<div class="query-footer">
-								<div class="helpful">17 Found Helpful</div>
-								<div class="reply">
-									<i class="fa-solid fa-reply"></i>
-									<span>Reply</span>
-								</div>
-								<div class="replies">1 Replies</div>
-							</div>
-						</div>
-
-						<div
-							class="query-container"
-							dataset="reply-1"
-							id="reply-1-to-reply-1">
-							<div class="query-card">
-								<div class="query-header">
-									<img
-										src="		/images/logo.png"
-										class="profile-pic" />
-									<span class="profile-name">Pooja</span>
-								</div>
-
-								<h2 class="title">The First Query</h2>
-								<p class="query-body">
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Voluptatibus totam,
-									repudiandae aspernatur natus dignissimos
-									nisi nihil blanditiis impedit facere vel, id
-									labore adipisci rerum dolore sit placeat
-									ipsam delectus harum!
-								</p>
-								<div class="query-footer">
-									<div class="helpful">17 Found Helpful</div>
-									<div class="reply">
-										<i class="fa-solid fa-reply"></i>
-										<span>Reply</span>
-									</div>
-									<div class="replies">0 Replies</div>
-								</div>
-							</div>
-						</div>
-					</div>
-
-					<div
-						class="query-container"
-						dataset="comment-2"
-						id="reply-2">
-						<div class="query-card">
-							<div class="query-header">
-								<img
-									src="		/images/logo.png"
-									class="profile-pic" />
-								<span class="profile-name">Atharva</span>
-							</div>
-
-							<h2 class="title">
-								The Second reply to First Query
-							</h2>
-							<p class="query-body">
-								Lorem ipsum dolor sit amet consectetur
-								adipisicing elit. Voluptatibus totam,
-								repudiandae aspernatur natus dignissimos nisi
-								nihil blanditiis impedit facere vel, id labore
-								adipisci rerum dolore sit placeat ipsam delectus
-								harum!
-							</p>
-							<div class="query-footer">
-								<div class="helpful">17 Found Helpful</div>
-								<div class="reply">
-									<i class="fa-solid fa-reply"></i>
-									<span>Reply</span>
-								</div>
-								<div class="replies">1 Replies</div>
-							</div>
-						</div>
-
-						<div
-							class="query-container"
-							dataset="reply-2"
-							id="reply-1-to-reply-2">
-							<div class="query-card">
-								<div class="query-header">
-									<img
-										src="		/images/logo.png"
-										class="profile-pic" />
-									<span class="profile-name">Pooja</span>
-								</div>
-
-								<h2 class="title">The First Query</h2>
-								<p class="query-body">
-									Lorem ipsum dolor sit amet consectetur
-									adipisicing elit. Voluptatibus totam,
-									repudiandae aspernatur natus dignissimos
-									nisi nihil blanditiis impedit facere vel, id
-									labore adipisci rerum dolore sit placeat
-									ipsam delectus harum!
-								</p>
-								<div class="query-footer">
-									<div class="helpful">17 Found Helpful</div>
-									<div class="reply">
-										<i class="fa-solid fa-reply"></i>
-										<span>Reply</span>
-									</div>
-									<div class="replies">0 Replies</div>
-								</div>
-							</div>
+						<div class="replies">
+							<%= query.replies.length %> Replies
 						</div>
 					</div>
 				</div>
+				<% if(query.replies.length > 0) { %> <%
+				query.replies.forEach(renderReply); %> <% } %>
 			</div>
+			<% }); %>
 		</div>
 	</body>
 </html>

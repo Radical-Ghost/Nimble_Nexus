@@ -39,30 +39,17 @@ const showreply = document.querySelectorAll(".replies");
 showreply.forEach((btn) =>
 	btn.addEventListener("click", (e) => {
 		let parentQuery = e.target.closest(".query-container");
-		let _id = parentQuery.id;
+		let _id = parentQuery.getAttribute("id").split("-")[1];
 		if (_id) {
-			let childQuery = parentQuery.querySelectorAll(`[dataset=${_id}]`);
-			childQuery.forEach((child) => {
+			let childQueries = document.querySelectorAll(
+				`div[dataset='comment-${_id}']`
+			);
+			childQueries.forEach((child) => {
 				child.classList.toggle("opened");
 			});
 		}
 	})
 );
-
-const helpful = document.querySelectorAll(".helpful");
-for (let i = 0; i < helpful.length; i++) {
-	let helpfulEl = helpful[i];
-	let helpfulVotes = parseInt(helpfulEl.textContent);
-
-	helpfulEl.addEventListener("click", (e) => {
-		if (helpfulEl.classList.contains("voted")) helpfulVotes--;
-		else helpfulVotes++;
-
-		helpfulEl.classList.toggle("voted");
-
-		helpfulEl.textContent = `${helpfulVotes} Found Helpful`;
-	});
-}
 
 //dropdowns
 const departmentItems = document.querySelectorAll(".sub-department-item");
@@ -133,3 +120,52 @@ input.addEventListener("input", function () {
 		}
 	}
 });
+
+input.addEventListener("input", function () {
+	let filter = input.value.toUpperCase();
+	let queries = document.querySelectorAll(".query-container");
+
+	for (let i = 0; i < queries.length; i++) {
+		let title = queries[i].querySelector(".title")?.textContent || "";
+		let desc = queries[i].querySelector(".query-body")?.textContent || "";
+		if (
+			title.toUpperCase().indexOf(filter) > -1 ||
+			desc.toUpperCase().indexOf(filter) > -1
+		) {
+			queries[i].style.display = "";
+		} else {
+			queries[i].style.display = "none";
+		}
+	}
+});
+
+function toggleLike(queryId) {
+	const helpfulDiv = document.querySelector(`#comment-${queryId} .helpful`);
+	const isLiked = helpfulDiv.classList.contains("liked");
+
+	if (isLiked) {
+		fetch(`/unlike_query/${queryId}`, {
+			method: "POST",
+		})
+			.then((data) => {
+				document.querySelector(
+					`#comment-${queryId} .helpful`
+				).innerText = `${data.likes} Found Helpful`;
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+			});
+	} else {
+		fetch(`/like_query/${queryId}`, {
+			method: "POST",
+		})
+			.then((data) => {
+				document.querySelector(
+					`#comment-${queryId} .helpful`
+				).innerText = `${data.likes} Found Helpful`;
+			})
+			.catch((error) => {
+				console.error("Error:", error);
+			});
+	}
+}

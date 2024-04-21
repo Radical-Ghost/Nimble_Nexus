@@ -39,7 +39,7 @@
 				<div class="heading-dep">Department</div>
 				<div class="heading-notice">Notice Title</div>
 				<div class="heading-date">Date</div>
-				<div class="heading-down">View</div>
+				<div class="heading-down">Query</div>
 
 				<div
 					class="notice-content"
@@ -56,7 +56,11 @@
 							(date.getMonth() + 1) + ' - ' + date.getFullYear();
 							%> <%= formattedDate %></span
 						>
-						<i class="fa-solid fa-download"></i>
+						<a
+							class="add-query"
+							href="/upload_query/<%= notice._id %>">
+							<i class="fa-solid fa-plus"></i>
+						</a>
 					</div>
 					<% }); %>
 				</div>

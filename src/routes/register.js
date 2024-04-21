@@ -4,6 +4,7 @@ const router = express.Router();
 const session = require("express-session");
 const MongoDBsession = require("connect-mongodb-session")(session);
 const User = require("../models/user");
+const notices = require("../models/notices");
 
 router.post("/register", async (req, res) => {
 	try {
@@ -28,10 +29,17 @@ router.post("/register", async (req, res) => {
 					gender: req.body.gender || "other",
 				});
 				await newUser.save();
-				res.status(200).render("department", {
+				req.session.userId = newUser._id;
+				req.session.Auth = true;
+				req.session.userName = newUser.name;
+				const sorted_notices = await notices
+					.find()
+					.sort({ creation_date: "desc" })
+					.limit(10);
+				res.render("department", {
 					title: "Home",
-					message: "Registration successful!",
-					isAdmin: false,
+					isAdmin: newUser.admin,
+					notices: sorted_notices,
 				});
 			}
 		}
