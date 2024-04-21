@@ -4,32 +4,37 @@ const router = express.Router();
 const { Query } = require("../models/query");
 const { Reply } = require("../models/query");
 
-router.post("/upload_query/:noticeId", async (req, res) => {
-	try {
-		const newQuery = new Query({
-			userId: req.session.userId,
-			userName: req.session.userName,
-			noticeId: req.params.noticeId,
-			title: req.body.title,
-			desc: req.body.desc,
-		});
+router.post(
+	"/upload_query/:noticeId/:noticeTitle/:noticeDep",
+	async (req, res) => {
+		try {
+			const newQuery = new Query({
+				userId: req.session.userId,
+				userName: req.session.userName,
+				noticeId: req.params.noticeId,
+				title: req.body.title,
+				desc: req.body.desc,
+				noticeName: req.params.noticeTitle,
+				noticeDep: req.params.noticeDep,
+			});
 
-		newQuery.save();
+			newQuery.save();
 
-		const allQueries = await Query.find({});
-		const allReplies = await Reply.find({});
-		res.render("queries", {
-			title: "Queries",
-			isAdmin: req.session.isAdmin,
-			queries: allQueries,
-			replies: allReplies,
-			queryId: req.params.queryId,
-			noticeId: req.params.noticeId,
-		});
-	} catch (err) {
-		console.error("Error:", err);
+			const allQueries = await Query.find({});
+			const allReplies = await Reply.find({});
+			res.render("queries", {
+				title: "Queries",
+				isAdmin: req.session.isAdmin,
+				queries: allQueries,
+				replies: allReplies,
+				queryId: req.params.queryId,
+				noticeId: req.params.noticeId,
+			});
+		} catch (err) {
+			console.error("Error:", err);
+		}
 	}
-});
+);
 
 router.post("/upload_reply/:queryId", async (req, res) => {
 	try {

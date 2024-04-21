@@ -24,7 +24,7 @@ const routes = [
 	{ path: "/lib", view: "departments/lib", title: "Library" },
 	{ path: "/upload_notice", view: "upload_notice", title: "Upload Notice" },
 	{
-		path: "/upload_query/:noticeId",
+		path: "/upload_query/:noticeId/:noticeTitle/:noticeDep",
 		view: "upload_query",
 		title: "Upload Query",
 	},
@@ -84,7 +84,7 @@ routes.forEach((route) => {
 		} else if (
 			route.path === "/queries" ||
 			route.path === "/dashboard" ||
-			route.path === "/upload_query/:noticeId" ||
+			route.path === "/upload_query/:noticeId/:noticeTitle/:noticeDep" ||
 			route.path === "/upload_reply/:queryId"
 		) {
 			const allQueries = await Query.find({});
@@ -96,6 +96,8 @@ routes.forEach((route) => {
 				replies: allReplies,
 				queryId: req.params.queryId,
 				noticeId: req.params.noticeId,
+				noticeName: req.params.noticeTitle,
+				noticeDep: req.params.noticeDep,
 			});
 		} else {
 			res.render(route.view, {

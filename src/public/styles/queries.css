@@ -39,6 +39,8 @@
 	background-color: var(--fore-c);
 	padding: 1rem;
 	border-radius: 15px;
+	display: grid;
+	grid-template-rows: auto auto auto auto;
 }
 
 .query-card h3,
@@ -47,10 +49,11 @@
 }
 
 .query-header {
-	display: flex;
+	display: grid;
 	font-size: 1.4rem;
 	align-items: center;
 	margin: 0 0 0.7rem 0;
+	grid-template-columns: 2% auto 13% 13%;
 }
 
 .query-body {

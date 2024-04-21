@@ -27,7 +27,9 @@
 		<%- include('components/navbar') %>
 		<!-- update from here -->
 
-		<form method="post" action="/upload_query/<%= noticeId %>">
+		<form
+			method="post"
+			action="/upload_query/<%= noticeId %>/<%= noticeName %>/<%= noticeDep %>">
 			<p><%= noticeId %></p>
 			<label for="title">Title:</label>
 			<textarea id="title" name="title" required></textarea>

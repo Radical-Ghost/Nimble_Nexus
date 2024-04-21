@@ -42,6 +42,14 @@ const querySchema = new mongoose.Schema({
 		type: mongoose.Schema.Types.ObjectId,
 		required: true,
 	},
+	noticeName: {
+		type: String,
+		required: true,
+	},
+	noticeDep: {
+		type: String,
+		required: true,
+	},
 	title: {
 		type: String,
 		required: true,
