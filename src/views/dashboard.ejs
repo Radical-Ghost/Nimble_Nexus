@@ -97,6 +97,88 @@
 
 			<div class="outer">
 				<p class="heading-outer">My Queries</p>
+				<div class="sub-queries">
+					<% function renderReply(reply) { %>
+					<div
+						class="query-container"
+						dataset="comment-<%= reply.parentReplyId %>"
+						id="reply-<%= reply._id %>">
+						<div class="query-card">
+							<div class="query-header">
+								<img
+									src="/images/logo.png"
+									class="profile-pic" />
+								<span class="profile-name"
+									><%= reply.userName %></span
+								>
+							</div>
+
+							<p class="query-body"><%= reply.desc %></p>
+							<div class="query-footer">
+								<div
+									class="helpful"
+									onclick="toggleLike('<%= reply._id %>')">
+									<%= reply.likes %> Found Helpful
+								</div>
+								<div class="reply">
+									<i class="fa-solid fa-reply"></i>
+									<a href="/upload_reply/<%= reply._id %>"
+										>Reply</a
+									>
+								</div>
+								<div class="replies">
+									<%= reply.replies.length %> Replies
+								</div>
+							</div>
+						</div>
+						<% if(reply.replies.length > 0) { %> <%
+						reply.replies.forEach(renderReply); %> <% } %>
+					</div>
+					<% } %> <% queries.forEach(query => { %> <%
+					if(query.userId.toString() === userId.toString()) { %>
+					<div
+						class="query-container opened parent"
+						id="comment-<%= query._id %>">
+						<div class="query-card">
+							<div class="query-header">
+								<img
+									src="/images/logo.png"
+									class="profile-pic" />
+								<span class="profile-name"
+									><%= query.userName %></span
+								>
+								<span class="notice-name"
+									>Notice Name: <%= query.noticeName %></span
+								>
+								<span class="department"
+									>Dep: <%= query.noticeDep %></span
+								>
+							</div>
+
+							<h4 class="title"><%= query.title %></h4>
+							<p class="query-body"><%= query.desc %></p>
+							<div class="query-footer">
+								<div
+									class="helpful"
+									onclick="toggleLike('<%= query._id %>')">
+									<%= query.likes %> Found Helpful
+								</div>
+								<div class="reply">
+									<i class="fa-solid fa-reply"></i>
+									<a href="/upload_reply/<%= query._id %>"
+										>Reply</a
+									>
+								</div>
+								<div class="replies">
+									<%= query.replies.length %> Replies
+								</div>
+							</div>
+						</div>
+						<% if(query.replies.length > 0) { %> <%
+						query.replies.forEach(renderReply); %> <% } %>
+					</div>
+					<% } %> <% }); %>
+				</div>
 			</div>
 		</div>
 	</body>

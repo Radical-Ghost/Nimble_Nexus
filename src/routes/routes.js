@@ -98,6 +98,7 @@ routes.forEach((route) => {
 				noticeId: req.params.noticeId,
 				noticeName: req.params.noticeTitle,
 				noticeDep: req.params.noticeDep,
+				userId: req.session.userId,
 			});
 		} else {
 			res.render(route.view, {

@@ -21,6 +21,7 @@ body.light-theme {
 	--search-pc: rgba(0, 0, 0, 0.3);
 	--shadow-c: rgba(138, 139, 155, 0.2);
 	--sub-text: rgb(108, 60, 227);
+	--query-bg: rgb(149, 117, 231);
 }
 
 body.dark-theme {
@@ -34,8 +35,9 @@ body.dark-theme {
 	--main-c: rgb(49, 26, 72);
 	--search-c: rgba(105, 105, 105, 0.21);
 	--search-pc: rgba(255, 255, 255, 0.3);
-	--shadow-c: rgba(0, 43, 78, 0.2);
+	--shadow-c: rgba(94, 94, 94, 0.369);
 	--sub-text: rgb(19, 153, 163);
+	--query-bg: rgb(90, 196, 204);
 }
 
 html {
@@ -223,15 +225,17 @@ body {
 
 ::-webkit-scrollbar {
 	width: 0.5rem;
+	border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-track {
 	background: var(--fore-c);
+	border-radius: 2rem;
 }
 
 ::-webkit-scrollbar-thumb {
 	background: var(--main-bg);
-	border-radius: 10px;
+	border-radius: 2rem;
 }
 
 /* Search Bar */
