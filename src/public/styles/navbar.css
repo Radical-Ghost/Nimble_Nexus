@@ -290,3 +290,7 @@ body {
 .date:hover .date-content {
 	display: block;
 }
+
+a {
+	text-decoration: none;
+}

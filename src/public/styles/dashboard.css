@@ -17,7 +17,6 @@ body {
 .container p {
 	text-align: center;
 	font-size: 3rem;
-	font-weight: 600;
 }
 
 .container button {
@@ -68,6 +67,7 @@ body {
 	color: var(--change-text);
 	grid-area: 1 / 1 / 4 / 4;
 	overflow: hidden;
+	font-weight: 600;
 }
 
 .s-container {
@@ -77,6 +77,7 @@ body {
 	background-color: var(--main-c);
 	overflow: hidden;
 	grid-template-rows: 20% 10% 10% 10% 10% 10% 10% 20%;
+	font-weight: 600;
 }
 
 .info-table {
@@ -115,6 +116,7 @@ body {
 
 .heading-outer {
 	padding-top: 1.5rem;
+	font-weight: 600;
 }
 
 .save {
@@ -185,6 +187,10 @@ body {
 	cursor: pointer;
 }
 
+.reply a {
+	color: var(--change-text);
+}
+
 .replies {
 	font-size: 1.2rem;
 	background-color: var(--border-c);
@@ -208,7 +214,7 @@ body {
 .query-header {
 	grid-row: 1;
 	display: grid;
-	grid-template-columns: 5% auto 22% 22%;
+	grid-template-columns: 5% auto 25% 30%;
 }
 
 .title {

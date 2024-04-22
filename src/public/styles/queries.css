@@ -80,6 +80,10 @@
 	cursor: pointer;
 }
 
+.reply a {
+	color: var(--change-text);
+}
+
 .replies {
 	background-color: var(--border-c);
 	border: 2px solid var(--border-c);
