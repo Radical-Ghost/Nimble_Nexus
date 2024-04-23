@@ -10,7 +10,7 @@
 		<div class="heading-dep">Dep</div>
 		<div class="heading-notice">Notices</div>
 		<div class="heading-date">Date</div>
-		<div class="heading-down">View</div>
+		<div class="heading-down">Add Query</div>
 
 		<div
 			class="notice-content"
@@ -26,7 +26,11 @@
 					1) + ' - ' + date.getFullYear(); %> <%= formattedDate
 					%></span
 				>
-				<i class="fa-solid fa-download"></i>
+				<a
+					class="add-query"
+					href="/upload_query/<%= notice._id %>/<%= notice.title %>/<%= notice.department %>">
+					<i class="fa-solid fa-plus"></i>
+				</a>
 			</div>
 			<% } %> <% }); %>
 		</div>
