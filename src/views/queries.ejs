@@ -53,13 +53,6 @@
 							onclick="toggleLike('<%= reply._id %>')">
 							<%= reply.likes %> Found Helpful
 						</div>
-						<div class="reply">
-							<i class="fa-solid fa-reply"></i>
-							<a href="/upload_reply/<%= reply._id %>">Reply</a>
-						</div>
-						<div class="replies">
-							<%= reply.replies.length %> Replies
-						</div>
 					</div>
 				</div>
 				<% if(reply.replies.length > 0) { %> <%

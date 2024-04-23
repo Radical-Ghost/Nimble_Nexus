@@ -75,11 +75,13 @@ routes.forEach((route) => {
 		} else if (route.path === "/admin") {
 			const no_notices = await notices.countDocuments();
 			const all_users = await User.find({});
+			const all_queries = await Query.find({});
 			res.render(route.view, {
 				title: route.title,
 				notices: no_notices,
 				users: all_users,
 				isAdmin: req.session.isAdmin,
+				queries: all_queries,
 			});
 		} else if (
 			route.path === "/queries" ||
@@ -87,6 +89,12 @@ routes.forEach((route) => {
 			route.path === "/upload_query/:noticeId/:noticeTitle/:noticeDep" ||
 			route.path === "/upload_reply/:queryId"
 		) {
+			const selected_notice = await notices.findOne({
+				_id: req.params.noticeId,
+			});
+			const selected_query = await Query.findOne({
+				_id: req.params.queryId,
+			});
 			const allQueries = await Query.find({});
 			const allReplies = await Reply.find({});
 			res.render(route.view, {
@@ -99,6 +107,8 @@ routes.forEach((route) => {
 				noticeName: req.params.noticeTitle,
 				noticeDep: req.params.noticeDep,
 				userId: req.session.userId,
+				selected_notice: selected_notice,
+				selected_query: selected_query,
 			});
 		} else {
 			res.render(route.view, {

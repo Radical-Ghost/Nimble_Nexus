@@ -26,14 +26,65 @@
 
 		<%- include('components/navbar') %>
 		<!-- update from here -->
+		<div class="container">
+			<div class="notice-part">
+				<div class="form-title">Replying to</div>
+				<hr />
+				<div
+					class="query-container opened parent"
+					id="comment-<%= selected_query._id %>">
+					<div class="query-card">
+						<div class="query-header">
+							<img src="/images/logo.png" class="profile-pic" />
+							<span class="profile-name"
+								><%= selected_query.userName %></span
+							>
+						</div>
+						<div class="query-title mar">
+							<span class="bold">Title:</span>
+							<span class="title not-bold"
+								><%= selected_query.title %></span
+							>
+						</div>
+						<div class="query-desc mar">
+							<span class="bold">Description:</span>
+							<span class="query-body not-bold"
+								><%= selected_query.desc %></span
+							>
+						</div>
+						<div class="notice-name mar">
+							<span class="bold">Notice Name: </span>
+							<span class="notice-name not-bold"
+								><%= selected_query.noticeName
+								%>
+						</div>
+						<div class="notice-dep mar">
+							<span class="bold">Department:</span>
+							<span class="department not-bold"
+								><%= selected_query.noticeDep %></span
+							>
+						</div>
+	
+					</div>
+				</div>
+			</div>
+			<form
+				method="post"
+				action="/upload_reply/<%= queryId %>"
+				class="forms">
+				<div class="form-title">Reply</div>
+				<hr />
 
-		<form method="post" action="/upload_reply/<%= queryId %>">
-			<p><%= queryId %></p>
+				<label for="desc">Description:</label>
+				<input
+					id="desc"
+					type="text"
+					class="input-field"
+					name="desc"
+					required />
 
-			<label for="desc">Description:</label>
-			<textarea id="desc" name="desc" required></textarea>
-
-			<button type="submit">Submit</button>
-		</form>
+				<button class="submit" type="submit">Submit</button>
+			</form>
+		</div>
 	</body>
 </html>

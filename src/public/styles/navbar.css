@@ -294,3 +294,7 @@ body {
 a {
 	text-decoration: none;
 }
+
+.submit {
+	background-color: #40c844;
+}

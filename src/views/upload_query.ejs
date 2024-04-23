@@ -26,18 +26,67 @@
 
 		<%- include('components/navbar') %>
 		<!-- update from here -->
+		<div class="container">
+			<div class="notice-part">
+				<div class="form-title">Asking Query On</div>
+				<hr />
+				<div class="notice-data" id="<%= selected_notice.imageId %>">
+					<div class="notice-title mar">
+						<span class="bold">Title:</span>
+						<span class="not-bold"
+							><%= selected_notice.title %></span
+						>
+					</div>
+					<div class="notice-desc mar">
+						<span class="bold">Description:</span>
+						<span class="not-bold"
+							><%= selected_notice.desc %></span
+						>
+					</div>
+					<div class="notice-dep mar">
+						<span class="bold">Department:</span>
+						<span class="not-bold"
+							><%= selected_notice.department %></span
+						>
+					</div>
+					<div class="notice-date mar">
+						<span class="bold">Date:</span>
+						<span class="not-bold"
+							><% let date = new
+							Date(selected_notice.creation_date); let
+							formattedDate = date.getDate() + ' - ' +
+							(date.getMonth() + 1) + ' - ' + date.getFullYear();
+							%> <%= formattedDate %></span
+						>
+					</div>
+				</div>
+			</div>
+			<form
+				method="post"
+				action="/upload_query/<%= noticeId %>/<%= noticeName %>/<%= noticeDep %>"
+				class="forms">
+				<div class="form-title">Reply</div>
+				<hr />
+				<label for="title">Title:</label>
+				<input
+					id="title"
+					type="text"
+					class="input-field"
+					name="title"
+					required />
 
-		<form
-			method="post"
-			action="/upload_query/<%= noticeId %>/<%= noticeName %>/<%= noticeDep %>">
-			<p><%= noticeId %></p>
-			<label for="title">Title:</label>
-			<textarea id="title" name="title" required></textarea>
+				<label for="desc">Description:</label>
+				<input
+					id="desc"
+					type="text"
+					class="input-field"
+					name="desc"
+					required />
 
-			<label for="desc">Description:</label>
-			<textarea id="desc" name="desc" required></textarea>
-
-			<button type="submit">Submit</button>
-		</form>
+				<button class="submit" type="submit">Submit</button>
+			</form>
+		</div>
 	</body>
 </html>
+
+<!--  -->

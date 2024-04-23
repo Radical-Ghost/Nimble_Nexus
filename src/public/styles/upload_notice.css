@@ -43,7 +43,6 @@ input[type="file"] {
 }
 
 button[type="submit"] {
-	background-color: #4caf50;
 	color: var(--change-text);
 	padding: 1rem 1.25rem;
 	border: none;
@@ -51,10 +50,6 @@ button[type="submit"] {
 	cursor: pointer;
 	margin-top: 1.25rem;
 	font-size: 1.5rem;
-}
-
-button[type="submit"]:hover {
-	background-color: #45a049;
 }
 
 .input-field {
