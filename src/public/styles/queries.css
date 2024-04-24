@@ -53,7 +53,8 @@
 	font-size: 1.4rem;
 	align-items: center;
 	margin: 0 0 0.7rem 0;
-	grid-template-columns: 2% auto 13% 13%;
+	grid-template-columns: auto 13% 13%;
+	gap: 2rem;
 }
 
 .query-body {
@@ -101,4 +102,9 @@
 .profile-name {
 	padding: 0 0 0 0.7rem;
 	font-weight: 700;
+}
+
+.query-indetifier {
+	display: flex;
+	align-items: center;
 }

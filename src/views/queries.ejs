@@ -42,18 +42,15 @@
 				id="reply-<%= reply._id %>">
 				<div class="query-card">
 					<div class="query-header">
-						<img src="/images/logo.png" class="profile-pic" />
-						<span class="profile-name"><%= reply.userName %></span>
+						<div class="query-indetifier">
+							<img src="/images/logo.png" class="profile-pic" />
+							<span class="profile-name"
+								><%= reply.userName %></span
+							>
+						</div>
 					</div>
 
 					<p class="query-body"><%= reply.desc %></p>
-					<div class="query-footer">
-						<div
-							class="helpful"
-							onclick="toggleLike('<%= reply._id %>')">
-							<%= reply.likes %> Found Helpful
-						</div>
-					</div>
 				</div>
 				<% if(reply.replies.length > 0) { %> <%
 				reply.replies.forEach(renderReply); %> <% } %>
@@ -64,8 +61,12 @@
 				id="comment-<%= query._id %>">
 				<div class="query-card">
 					<div class="query-header">
-						<img src="/images/logo.png" class="profile-pic" />
-						<span class="profile-name"><%= query.userName %></span>
+						<div class="query-indetifier">
+							<img src="/images/logo.png" class="profile-pic" />
+							<span class="profile-name"
+								><%= query.userName %></span
+							>
+						</div>
 						<span class="notice-name"
 							>Notice Name: <%= query.noticeName %></span
 						>
