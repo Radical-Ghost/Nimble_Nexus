@@ -46,11 +46,13 @@ router.post("/upload_notice", upload.single("notice"), async (req, res) => {
 
 		const no_notices = await Notice.countDocuments();
 		const all_users = await User.find({});
+		const queries = await Notice.find({});
 		res.render("admin", {
 			title: "Admin",
 			notices: no_notices,
 			users: all_users,
 			isAdmin: req.session.isAdmin,
+			queries: queries,
 		});
 	} catch (err) {
 		console.error("Error:", err);

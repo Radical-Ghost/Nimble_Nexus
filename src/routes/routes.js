@@ -95,6 +95,7 @@ routes.forEach((route) => {
 			const selected_query = await Query.findOne({
 				_id: req.params.queryId,
 			});
+			const currentUser = await User.findOne({ _id: req.session.userId });
 			const allQueries = await Query.find({});
 			const allReplies = await Reply.find({});
 			res.render(route.view, {
@@ -109,6 +110,7 @@ routes.forEach((route) => {
 				userId: req.session.userId,
 				selected_notice: selected_notice,
 				selected_query: selected_query,
+				currentUser: currentUser,
 			});
 		} else {
 			res.render(route.view, {
