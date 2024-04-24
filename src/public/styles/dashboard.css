@@ -33,18 +33,6 @@ body {
 	cursor: pointer;
 }
 
-.container input {
-	background-color: var(--fore-c);
-	border: none;
-	margin: 8px 0;
-	padding: 10px 15px;
-	font-size: 13px;
-	border-radius: 8px;
-	width: 80%;
-	outline: none;
-	justify-content: left;
-}
-
 .sub-container {
 	display: grid;
 	border-radius: 2rem;
@@ -90,7 +78,7 @@ body {
 
 .outer {
 	display: grid;
-	color: var(--change-text);
+	color: #fff;
 	background-color: var(--sub-text);
 	grid-area: 2 / 2 / 4 / 3;
 	border-radius: 2rem;
@@ -98,12 +86,25 @@ body {
 	grid-template-rows: 20% 1fr;
 }
 
+.f-container .row {
+	color: var(--change-text);
+}
+
+.s-container p {
+	color: #fff;
+}
+
 .row {
 	width: 100%;
-	display: flex;
-	justify-items: center;
+	display: grid;
 	align-items: center;
-	justify-content: space-between;
+	grid-template-columns: 30% auto;
+	font-weight: 400;
+	color: #fff;
+}
+
+.row label {
+	font-weight: 600;
 }
 
 .gen {
@@ -131,7 +132,7 @@ body {
 .sub-queries {
 	overflow-y: scroll;
 	overflow-x: hidden;
-	color: var(--change-text);
+	color: #fff;
 	background-color: transparent;
 	width: 95%;
 	height: 85%;
@@ -168,7 +169,18 @@ body {
 	align-content: center;
 }
 
-.query-card p {
+.query-card-reply {
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	background-color: var(--query-bg);
+	border-radius: 15px;
+	padding: 10px;
+	align-items: center;
+	align-content: center;
+}
+
+.query-card p,
+.query-card-reply p {
 	font-size: 1.2rem;
 }
 
@@ -188,7 +200,7 @@ body {
 }
 
 .reply a {
-	color: var(--change-text);
+	color: #fff;
 }
 
 .replies {

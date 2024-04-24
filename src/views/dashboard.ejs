@@ -36,30 +36,30 @@
 						<p>Personal information</p>
 						<div class="row">
 							<label for="name" class="txt">Name: </label>
-							<input type="name" placeholder="Name" />
+							<div class="details"><%= currentUser.name %></div>
 						</div>
 
 						<div class="row">
 							<label for="Email" class="txt">Email: </label>
-							<input type="email" placeholder="Email" />
+							<div class="details"><%= currentUser.email %></div>
 						</div>
 
 						<div class="row">
 							<label for="Phone" class="txt">Phone: </label>
-							<input type="Phone" placeholder="Phone" />
+							<div class="details">
+								<%= currentUser.phoneNumber %>
+							</div>
 						</div>
 
 						<div class="row">
 							<label for="DOB" class="txt">Date of birth: </label>
-							<input type="DOB" placeholder="Date of Birth" />
+							<div class="details"><%= currentUser.dob %></div>
 						</div>
 
 						<div class="row">
 							<label for="Age" class="txt">Age: </label>
-							<input type="Age" placeholder="Age" />
+							<div class="details"><%= currentUser.age %></div>
 						</div>
-
-						<button class="save">Save</button>
 					</form>
 				</div>
 
@@ -70,27 +70,28 @@
 							<label for="Department" class="txt"
 								>Department:
 							</label>
-							<input type="department" placeholder="department" />
-						</div>
-
-						<div class="row">
-							<label for="Role" class="txt">Role: </label>
-							<input type="Role" placeholder="Role" />
+							<div class="details">
+								<%= currentUser.department%>
+							</div>
 						</div>
 
 						<div class="row">
 							<label for="Year" class="txt">Year: </label>
-							<input type="Year" placeholder="Academic-year" />
+							<div class="details">
+								<%= currentUser.academicYear %>
+							</div>
 						</div>
 
 						<div class="row">
 							<label for="Caste" class="txt">Caste:</label>
-							<input type="Caste" placeholder="Caste/Category" />
+							<div class="details">
+								<%= currentUser.casteCategory %>
+							</div>
 						</div>
 
 						<div class="row">
 							<label for="GR_NO" class="txt">GR_NO:</label>
-							<input type="GR_NO" placeholder="GR_NO" />
+							<div class="details"><%= currentUser.ID %></div>
 						</div>
 
 						<button class="forgot-pass">Forgot Password</button>
@@ -106,7 +107,7 @@
 						class="query-container"
 						dataset="comment-<%= reply.parentReplyId %>"
 						id="reply-<%= reply._id %>">
-						<div class="query-card">
+						<div class="query-card-reply">
 							<div class="query-header">
 								<img
 									src="/images/logo.png"
@@ -117,22 +118,6 @@
 							</div>
 
 							<p class="query-body"><%= reply.desc %></p>
-							<div class="query-footer">
-								<div
-									class="helpful"
-									onclick="toggleLike('<%= reply._id %>')">
-									<%= reply.likes %> Found Helpful
-								</div>
-								<div class="reply">
-									<i class="fa-solid fa-reply"></i>
-									<a href="/upload_reply/<%= reply._id %>"
-										>Reply</a
-									>
-								</div>
-								<div class="replies">
-									<%= reply.replies.length %> Replies
-								</div>
-							</div>
 						</div>
 						<% if(reply.replies.length > 0) { %> <%
 						reply.replies.forEach(renderReply); %> <% } %>
