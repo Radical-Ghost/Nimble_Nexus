@@ -11,7 +11,7 @@ Nimble Nexus is a dynamic online notice board platform designed to streamline co
 -   Multi-User Access – Enables students and faculty to post and manage notices securely.
 -   Role-Based Access – Controls who can post, edit, and delete notices.
 
-## Technology Stack
+## Technologies used
 
 -   Frontend: EJS
 -   Backend: Node.js, Express.js
