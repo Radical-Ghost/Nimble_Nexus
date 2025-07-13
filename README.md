@@ -1,4 +1,4 @@
-# TradeTavern: Online Notice Board Website
+# Nimble Nexus: Online Notice Board Website
 
 Nimble Nexus is a dynamic online notice board platform designed to streamline communication within colleges and educational institutions. The platform provides an organized and efficient way to share important announcements, event details, and academic updates. Built using EJS, CSS, MongoDB, JavaScript, and Node.js, Nimble Nexus ensures real-time updates, easy accessibility, and a user-friendly interface for students, faculty, and administrators.
 
